@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkName = "-applicationDidEnterBackground:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LMessage/UI/BaseUI/EHBaseViewController.m"
-            timestampString = "482049490.351368"
+            filePath = "LMessage/HistoryViewController.m"
+            timestampString = "482486132.016033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "@implementation HistoryViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LMessage/UI/BaseUI/EHBaseViewController.m"
-            timestampString = "482049627.416865"
+            filePath = "LMessage/HistoryViewController.m"
+            timestampString = "482486136.980592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "-backBtnPressed:"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-backButtonActon:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

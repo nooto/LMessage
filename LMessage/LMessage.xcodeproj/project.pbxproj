@@ -52,6 +52,7 @@
 		E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56F11CC20E4700D44138 /* EHNavButton.m */; };
 		E27F56F71CC20E4700D44138 /* UINavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56F31CC20E4700D44138 /* UINavigationController+Animation.m */; };
 		E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FA1CC20E6500D44138 /* ViewController.m */; };
+		E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FD1CC20F9100D44138 /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		E27F56F31CC20E4700D44138 /* UINavigationController+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Animation.m"; sourceTree = "<group>"; };
 		E27F56F91CC20E6500D44138 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E27F56FA1CC20E6500D44138 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E27F56FC1CC20F9100D44138 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		E27F56FD1CC20F9100D44138 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,8 @@
 				E2528E871C9FF36C0015180D /* AppDelegate.m */,
 				E27F56F91CC20E6500D44138 /* ViewController.h */,
 				E27F56FA1CC20E6500D44138 /* ViewController.m */,
+				E27F56FC1CC20F9100D44138 /* HistoryViewController.h */,
+				E27F56FD1CC20F9100D44138 /* HistoryViewController.m */,
 				E2528E8C1C9FF36C0015180D /* Main.storyboard */,
 				E2528E8F1C9FF36C0015180D /* Assets.xcassets */,
 				E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */,
@@ -549,6 +554,7 @@
 				E27F56F41CC20E4700D44138 /* EHBaseViewController.m in Sources */,
 				E27F569D1CC20E2B00D44138 /* DDMultiFormatter.m in Sources */,
 				E27F56991CC20E2B00D44138 /* DDLogFormatter.m in Sources */,
+				E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */,
 				E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */,
 				E27F56DF1CC20E3B00D44138 /* EHSysProperty.m in Sources */,
 				E27F56D81CC20E3B00D44138 /* NSString+hex.m in Sources */,
