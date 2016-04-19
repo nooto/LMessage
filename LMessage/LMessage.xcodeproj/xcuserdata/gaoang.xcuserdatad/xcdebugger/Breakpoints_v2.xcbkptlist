@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LMessage/AppDelegate.m"
-            timestampString = "482049394.987414"
+            filePath = "LMessage/UI/BaseUI/CircleTransitionAnimator.m"
+            timestampString = "482747251.513355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-applicationDidEnterBackground:"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-animateTransition:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LMessage/HistoryViewController.m"
-            timestampString = "482486132.016033"
+            filePath = "LMessage/UI/BaseUI/CircleTransitionAnimator.m"
+            timestampString = "482747900.756079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "@implementation HistoryViewController"
-            landmarkType = "3">
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-animateTransition:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LMessage/HistoryViewController.m"
-            timestampString = "482486136.980592"
+            filePath = "LMessage/UI/BaseUI/CircleTransitionAnimator.m"
+            timestampString = "482747905.931947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-backButtonActon:"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-animationDidStop:finished:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LMessage/UI/BaseUI/NavigationControllerDelegate.m"
+            timestampString = "482759086.096171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-navigationController:interactionControllerForAnimationController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

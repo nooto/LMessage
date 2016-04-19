@@ -58,16 +58,19 @@
 }
 #pragma mark - 
 -(void)pushViewController:(UIViewController*)vc{
-    [self.navigationController pushViewController:vc animated:YES];
+    [RootNavigation pushViewController:vc animated:YES];
+
 }
 
 -(void)pushViewControllerNoAnimated:(UIViewController*)vc{
-    [self.navigationController pushViewController:vc animated:NO];
+    [RootNavigation pushViewController:vc animated:NO];
 }
 
 -(void)popViewControllerNoAnimated{
-    [self.navigationController popViewControllerAnimated:NO];
+//    [RootNavigation dismissViewControllerAnimated:<#(BOOL)#> completion:<#^(void)completion#>]
+    [RootNavigation popViewControllerAnimated:NO];
 }
+
 -(void)popViewControllerAnimated{
     [self.navigationController popViewControllerAnimated:YES];
 }

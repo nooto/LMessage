@@ -23,5 +23,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+}
 
 @end

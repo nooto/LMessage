@@ -14,6 +14,8 @@
 		E2528E931C9FF36C0015180D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */; };
 		E2528E9E1C9FF36C0015180D /* LMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E9D1C9FF36C0015180D /* LMessageTests.m */; };
 		E2528EA91C9FF36C0015180D /* LMessageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528EA81C9FF36C0015180D /* LMessageUITests.m */; };
+		E27C1D7D1CC4C0520068DB96 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C1D7C1CC4C0520068DB96 /* NavigationControllerDelegate.m */; };
+		E27C1D801CC4C8FD0068DB96 /* CircleTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C1D7F1CC4C8FD0068DB96 /* CircleTransitionAnimator.m */; };
 		E27F56951CC20E2B00D44138 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F567E1CC20E2B00D44138 /* DDAbstractDatabaseLogger.m */; };
 		E27F56961CC20E2B00D44138 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56801CC20E2B00D44138 /* DDASLLogger.m */; };
 		E27F56971CC20E2B00D44138 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56821CC20E2B00D44138 /* DDFileLogger.m */; };
@@ -88,6 +90,10 @@
 		E2528EA81C9FF36C0015180D /* LMessageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMessageUITests.m; sourceTree = "<group>"; };
 		E2528EAA1C9FF36C0015180D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2528F0E1C9FF6550015180D /* LMessage.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMessage.pch; sourceTree = "<group>"; };
+		E27C1D7B1CC4C0520068DB96 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
+		E27C1D7C1CC4C0520068DB96 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
+		E27C1D7E1CC4C8FD0068DB96 /* CircleTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTransitionAnimator.h; sourceTree = "<group>"; };
+		E27C1D7F1CC4C8FD0068DB96 /* CircleTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleTransitionAnimator.m; sourceTree = "<group>"; };
 		E27F567D1CC20E2B00D44138 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		E27F567E1CC20E2B00D44138 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		E27F567F1CC20E2B00D44138 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -416,6 +422,10 @@
 				E27F56F11CC20E4700D44138 /* EHNavButton.m */,
 				E27F56F21CC20E4700D44138 /* UINavigationController+Animation.h */,
 				E27F56F31CC20E4700D44138 /* UINavigationController+Animation.m */,
+				E27C1D7B1CC4C0520068DB96 /* NavigationControllerDelegate.h */,
+				E27C1D7C1CC4C0520068DB96 /* NavigationControllerDelegate.m */,
+				E27C1D7E1CC4C8FD0068DB96 /* CircleTransitionAnimator.h */,
+				E27C1D7F1CC4C8FD0068DB96 /* CircleTransitionAnimator.m */,
 			);
 			path = BaseUI;
 			sourceTree = "<group>";
@@ -558,6 +568,7 @@
 				E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */,
 				E27F56DF1CC20E3B00D44138 /* EHSysProperty.m in Sources */,
 				E27F56D81CC20E3B00D44138 /* NSString+hex.m in Sources */,
+				E27C1D801CC4C8FD0068DB96 /* CircleTransitionAnimator.m in Sources */,
 				E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */,
 				E27F569C1CC20E2B00D44138 /* DDDispatchQueueLogFormatter.m in Sources */,
 				E27F56E11CC20E3B00D44138 /* MJConst.m in Sources */,
@@ -570,6 +581,7 @@
 				E27F56E81CC20E3B00D44138 /* SFHFKeychainUtils.m in Sources */,
 				E27F56E31CC20E3B00D44138 /* MJIvar.m in Sources */,
 				E27F56E51CC20E3B00D44138 /* NSObject+MJCoding.m in Sources */,
+				E27C1D7D1CC4C0520068DB96 /* NavigationControllerDelegate.m in Sources */,
 				E27F56DB1CC20E3B00D44138 /* UIImage+Category.m in Sources */,
 				E27F56F71CC20E4700D44138 /* UINavigationController+Animation.m in Sources */,
 				E27F56E01CC20E3B00D44138 /* EHSysScreen.m in Sources */,

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#define RootNavigation  (UINavigationController*)( ((AppDelegate *)([UIApplication sharedApplication].delegate)).window.rootViewController)
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
 
 

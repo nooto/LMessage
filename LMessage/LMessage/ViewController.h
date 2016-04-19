@@ -10,6 +10,6 @@
 #import "EHBaseViewController.h"
 @interface ViewController : EHBaseViewController
 
-
+@property (nonatomic, strong) IBOutlet  UINavigationController *mRootNavigation;
 @end
 
