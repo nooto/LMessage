@@ -65,7 +65,6 @@
     maskLayerAnimation.delegate = self;
     [masklayer addAnimation:maskLayerAnimation forKey:@"path"];
     
-
 }
 
 //override?func?animationDidStop(anim:?CAAnimation!,?finished?flag:?Bool)?{

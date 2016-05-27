@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 #define RootNavigation  (UINavigationController*)( ((AppDelegate *)([UIApplication sharedApplication].delegate)).window.rootViewController)
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

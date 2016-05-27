@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NuE-3x-Pc5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NuE-3x-Pc5">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -35,45 +34,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="global_img_navbg" translatesAutoresizingMaskIntoConstraints="NO" id="wTK-A4-bQd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="global_img_navbg" translatesAutoresizingMaskIntoConstraints="NO" id="wTK-A4-bQd">
                                 <rect key="frame" x="0.0" y="0.0" width="376" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="ERF-gP-ukh"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="TAd-nq-xPp"/>
+                                    <constraint firstAttribute="height" constant="64" id="EGa-gQ-rKK"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="ERF-gP-ukh"/>
-                                        <exclude reference="TAd-nq-xPp"/>
+                                        <exclude reference="EGa-gQ-rKK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <mask key="constraints">
-                                        <include reference="ERF-gP-ukh"/>
-                                        <include reference="TAd-nq-xPp"/>
+                                        <include reference="EGa-gQ-rKK"/>
                                     </mask>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hev-RT-gOC">
                                 <rect key="frame" x="283" y="20" width="90" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="NMj-cC-vQ6"/>
-                                    <constraint firstAttribute="height" constant="44" id="wIW-WS-vPF"/>
-                                </constraints>
                                 <state key="normal" title="历史纪录"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="NMj-cC-vQ6"/>
-                                        <exclude reference="wIW-WS-vPF"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="NMj-cC-vQ6"/>
-                                        <include reference="wIW-WS-vPF"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <segue destination="uBN-CR-HEZ" kind="show" id="gWo-2c-JFS"/>
                                 </connections>
@@ -81,28 +61,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="wTK-A4-bQd" secondAttribute="trailing" id="ASV-pL-08h"/>
-                            <constraint firstItem="wTK-A4-bQd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Amn-Pc-HrL"/>
-                            <constraint firstItem="wTK-A4-bQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KQZ-ja-QD2"/>
-                            <constraint firstItem="wTK-A4-bQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RpD-Wo-1z1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wTK-A4-bQd" secondAttribute="trailing" id="g4E-4g-ygf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wTK-A4-bQd" secondAttribute="trailing" id="DuU-Ul-Ftz"/>
+                            <constraint firstItem="wTK-A4-bQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uZ8-ma-u4h"/>
+                            <constraint firstItem="wTK-A4-bQd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="zLm-L4-7xC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ASV-pL-08h"/>
-                                <exclude reference="Amn-Pc-HrL"/>
-                                <exclude reference="KQZ-ja-QD2"/>
-                                <exclude reference="RpD-Wo-1z1"/>
-                                <exclude reference="g4E-4g-ygf"/>
+                                <exclude reference="DuU-Ul-Ftz"/>
+                                <exclude reference="uZ8-ma-u4h"/>
+                                <exclude reference="zLm-L4-7xC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
-                                <include reference="ASV-pL-08h"/>
-                                <include reference="Amn-Pc-HrL"/>
-                                <include reference="KQZ-ja-QD2"/>
-                                <include reference="RpD-Wo-1z1"/>
-                                <include reference="g4E-4g-ygf"/>
+                                <include reference="DuU-Ul-Ftz"/>
+                                <include reference="uZ8-ma-u4h"/>
+                                <include reference="zLm-L4-7xC"/>
                             </mask>
                         </variation>
                     </view>

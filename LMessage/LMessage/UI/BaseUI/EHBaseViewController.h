@@ -35,5 +35,19 @@
  *  关闭屏幕键盘。
  */
 - (void)closeKeyBoard;
+
+/**
+ *  自定义导航栏实现。
+ *
+ */
+@property (nonatomic, strong) EHCustomNavBar *mNavBarView;
+
+- (void)backBtnPressed:(UIButton *)sender;
+
+- (void)addRightButton:(UIButton*)button;
+-(void)hiddeBackButton;
+-(void)showBackButton;
+-(void)setBackButtonImage:(UIImage*)image;
+-(void)setBackButtonText:(NSString*)text;
 @end
 

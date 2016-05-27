@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "EHSearchViewController.h"
 @interface ViewController ()
 
 @end
@@ -17,13 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H+20, NAVBAR_H - 20)];
+    rightBtn.titleLabel.font = Font15;
+    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [rightBtn addTarget:self action:@selector(saveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self addRightButton:rightBtn];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)saveButtonAction:(UIButton*)sender{
+    EHSearchViewController *vc = [[EHSearchViewController alloc] init];
+    [self pushViewController:vc];
 }
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-}
-
 @end

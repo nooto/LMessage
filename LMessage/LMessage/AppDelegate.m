@@ -17,6 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    CGRect fram = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:fram];
+    [self.window makeKeyAndVisible];
+    initFitDimension();
+    
+    //    if ([UINavigationBar respondsToSelector:@selector(appearance)]) {
+    if([EHSysProperty getSystemVersion]>8.0){
+        [UINavigationBar appearance].hidden = YES;
+    }
+    //        [[UINavigationBar appearance] setTranslucent:NO];
+    
+    ViewController *root = [[ViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];
+    self.window.rootViewController = nav;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }
 

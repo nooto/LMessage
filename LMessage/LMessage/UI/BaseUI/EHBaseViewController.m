@@ -49,7 +49,16 @@
     [[UIApplication sharedApplication].keyWindow addSubview: self.progressHUD];
     [self.progressHUD show:YES];
 }
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self.view addSubview:self.mNavBarView];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)removeHUD{
     [self.progressHUD removeFromSuperview];
@@ -99,5 +108,53 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
+
+
+//
+-(void)setTitle:(NSString *)title{
+    [super setTitle:title];
+    [self.mNavBarView setTitle:title];
+}
+
+-(EHCustomNavBar*)mNavBarView{
+    if (!_mNavBarView) {
+        _mNavBarView = [[EHCustomNavBar alloc] initWithdelegate:self];
+    }
+    return _mNavBarView;
+}
+
+- (void)backBtnPressed:(UIButton *)sender {
+    [self popViewControllerAnimated];
+}
+
+-(void)addRightButton:(UIButton *)button{
+    if (button) {
+        [self.mNavBarView addSubview:button];
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        button.titleLabel.font = self.mNavBarView.mTextLabel.font;
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, -MarginH(10), 0, MarginH(10));
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -MarginH(10), 0, MarginH(10));
+        button.center = CGPointMake(SCREEN_W - CGRectGetWidth(button.frame)/2, self.mNavBarView.mTextLabel.center.y);
+    }
+}
+
+-(void)hiddeBackButton{
+    self.mNavBarView.mLeftButton.hidden = YES;
+}
+-(void)showBackButton{
+    self.mNavBarView.mLeftButton.hidden = NO;
+}
+-(void)setBackButtonImage:(UIImage *)image{
+    [self.mNavBarView.mLeftButton setImage:image forState:UIControlStateNormal];
+}
+
+-(void)setBackButtonText:(NSString *)text{
+    [self.mNavBarView.mLeftButton setTitle:text forState:UIControlStateNormal];
+}
+
+-(BOOL)checkTopViewController{
+    return NO;
+}
+
 
 @end

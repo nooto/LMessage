@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E2528E851C9FF36C0015180D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E841C9FF36C0015180D /* main.m */; };
 		E2528E881C9FF36C0015180D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E871C9FF36C0015180D /* AppDelegate.m */; };
-		E2528E8E1C9FF36C0015180D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2528E8C1C9FF36C0015180D /* Main.storyboard */; };
 		E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2528E8F1C9FF36C0015180D /* Assets.xcassets */; };
 		E2528E931C9FF36C0015180D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */; };
 		E2528E9E1C9FF36C0015180D /* LMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E9D1C9FF36C0015180D /* LMessageTests.m */; };
@@ -55,6 +54,7 @@
 		E27F56F71CC20E4700D44138 /* UINavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56F31CC20E4700D44138 /* UINavigationController+Animation.m */; };
 		E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FA1CC20E6500D44138 /* ViewController.m */; };
 		E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FD1CC20F9100D44138 /* HistoryViewController.m */; };
+		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		E2528E841C9FF36C0015180D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2528E861C9FF36C0015180D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2528E871C9FF36C0015180D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E2528E8D1C9FF36C0015180D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2528E8F1C9FF36C0015180D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2528E921C9FF36C0015180D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2528E941C9FF36C0015180D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +175,8 @@
 		E27F56FA1CC20E6500D44138 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E27F56FC1CC20F9100D44138 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		E27F56FD1CC20F9100D44138 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchViewController.h; sourceTree = "<group>"; };
+		E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,9 +234,10 @@
 				E2528E871C9FF36C0015180D /* AppDelegate.m */,
 				E27F56F91CC20E6500D44138 /* ViewController.h */,
 				E27F56FA1CC20E6500D44138 /* ViewController.m */,
+				E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */,
+				E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */,
 				E27F56FC1CC20F9100D44138 /* HistoryViewController.h */,
 				E27F56FD1CC20F9100D44138 /* HistoryViewController.m */,
-				E2528E8C1C9FF36C0015180D /* Main.storyboard */,
 				E2528E8F1C9FF36C0015180D /* Assets.xcassets */,
 				E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */,
 				E2528E941C9FF36C0015180D /* Info.plist */,
@@ -536,7 +538,6 @@
 				E2528E931C9FF36C0015180D /* LaunchScreen.storyboard in Resources */,
 				E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */,
 				E27F569E1CC20E2B00D44138 /* README.txt in Resources */,
-				E2528E8E1C9FF36C0015180D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +579,7 @@
 				E27F56DC1CC20E3B00D44138 /* UILabel+AutoSize.m in Sources */,
 				E27F56951CC20E2B00D44138 /* DDAbstractDatabaseLogger.m in Sources */,
 				E27F56E41CC20E3B00D44138 /* MJType.m in Sources */,
+				E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */,
 				E27F56E81CC20E3B00D44138 /* SFHFKeychainUtils.m in Sources */,
 				E27F56E31CC20E3B00D44138 /* MJIvar.m in Sources */,
 				E27F56E51CC20E3B00D44138 /* NSObject+MJCoding.m in Sources */,
@@ -638,14 +640,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E2528E8C1C9FF36C0015180D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2528E8D1C9FF36C0015180D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

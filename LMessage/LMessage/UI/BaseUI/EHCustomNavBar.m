@@ -33,6 +33,10 @@
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
     self.layer.shadowPath = shadowPath.CGPath;
     
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    bgImageView.image = [UIImage imageNamed:@"global_img_navbg"];
+    [self addSubview:bgImageView];
+
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame) - 20)];
     [self addSubview:titleLabel];
     titleLabel.center = CGPointMake(SCREEN_W/2, CGRectGetHeight(self.bounds)/2 + 10);
