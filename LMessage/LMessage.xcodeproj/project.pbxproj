@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E216B5731CFD31C7002FB0CC /* EHViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5721CFD31C7002FB0CC /* EHViewTableView.m */; };
+		E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */; };
+		E216B57A1CFD3480002FB0CC /* EHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5791CFD3480002FB0CC /* EHBaseObject.m */; };
+		E216B57D1CFD34BA002FB0CC /* EHLocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B57C1CFD34BA002FB0CC /* EHLocationData.m */; };
 		E2528E851C9FF36C0015180D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E841C9FF36C0015180D /* main.m */; };
 		E2528E881C9FF36C0015180D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E871C9FF36C0015180D /* AppDelegate.m */; };
 		E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2528E8F1C9FF36C0015180D /* Assets.xcassets */; };
@@ -75,6 +79,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E216B5711CFD31C7002FB0CC /* EHViewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableView.h; sourceTree = "<group>"; };
+		E216B5721CFD31C7002FB0CC /* EHViewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHViewTableView.m; sourceTree = "<group>"; };
+		E216B5741CFD32FD002FB0CC /* EHViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableViewCell.h; sourceTree = "<group>"; };
+		E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHViewTableViewCell.m; sourceTree = "<group>"; };
+		E216B5781CFD3480002FB0CC /* EHBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHBaseObject.h; sourceTree = "<group>"; };
+		E216B5791CFD3480002FB0CC /* EHBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHBaseObject.m; sourceTree = "<group>"; };
+		E216B57B1CFD34BA002FB0CC /* EHLocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLocationData.h; sourceTree = "<group>"; };
+		E216B57C1CFD34BA002FB0CC /* EHLocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLocationData.m; sourceTree = "<group>"; };
 		E2528E801C9FF36C0015180D /* LMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2528E841C9FF36C0015180D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2528E861C9FF36C0015180D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +216,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E216B5771CFD3454002FB0CC /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E216B5781CFD3480002FB0CC /* EHBaseObject.h */,
+				E216B5791CFD3480002FB0CC /* EHBaseObject.m */,
+				E216B57B1CFD34BA002FB0CC /* EHLocationData.h */,
+				E216B57C1CFD34BA002FB0CC /* EHLocationData.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		E2528E771C9FF36C0015180D = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +250,7 @@
 		E2528E821C9FF36C0015180D /* LMessage */ = {
 			isa = PBXGroup;
 			children = (
+				E216B5771CFD3454002FB0CC /* DataModel */,
 				E27F56EA1CC20E4700D44138 /* UI */,
 				E27F56A01CC20E3B00D44138 /* Utility */,
 				E27F567B1CC20E2B00D44138 /* 3rdParty */,
@@ -409,6 +433,10 @@
 			isa = PBXGroup;
 			children = (
 				E27F56EB1CC20E4700D44138 /* BaseUI */,
+				E216B5711CFD31C7002FB0CC /* EHViewTableView.h */,
+				E216B5721CFD31C7002FB0CC /* EHViewTableView.m */,
+				E216B5741CFD32FD002FB0CC /* EHViewTableViewCell.h */,
+				E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -564,6 +592,7 @@
 			files = (
 				E27F56F41CC20E4700D44138 /* EHBaseViewController.m in Sources */,
 				E27F569D1CC20E2B00D44138 /* DDMultiFormatter.m in Sources */,
+				E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */,
 				E27F56991CC20E2B00D44138 /* DDLogFormatter.m in Sources */,
 				E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */,
 				E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */,
@@ -593,6 +622,8 @@
 				E27F569F1CC20E2B00D44138 /* MBProgressHUD.m in Sources */,
 				E27F56DD1CC20E3B00D44138 /* UITextField+Placeholder.m in Sources */,
 				E27F56E71CC20E3B00D44138 /* NSObject+MJKeyValue.m in Sources */,
+				E216B57D1CFD34BA002FB0CC /* EHLocationData.m in Sources */,
+				E216B5731CFD31C7002FB0CC /* EHViewTableView.m in Sources */,
 				E27F56E91CC20E3B00D44138 /* Utility.m in Sources */,
 				E27F56D91CC20E3B00D44138 /* NSString+XEP_0106.m in Sources */,
 				E27F56D71CC20E3B00D44138 /* NSString+HCTAvailableString.m in Sources */,
@@ -600,6 +631,7 @@
 				E27F56E21CC20E3B00D44138 /* MJFoundation.m in Sources */,
 				E27F569A1CC20E2B00D44138 /* DDTTYLogger.m in Sources */,
 				E27F56981CC20E2B00D44138 /* DDLog.m in Sources */,
+				E216B57A1CFD3480002FB0CC /* EHBaseObject.m in Sources */,
 				E27F56D51CC20E3B00D44138 /* NSDateFormatter+Category.m in Sources */,
 				E2528E881C9FF36C0015180D /* AppDelegate.m in Sources */,
 				E27F56DE1CC20E3B00D44138 /* UIView+Frame.m in Sources */,

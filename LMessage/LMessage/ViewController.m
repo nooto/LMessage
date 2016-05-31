@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "EHSearchViewController.h"
+#import "EHViewTableView.h"
 @interface ViewController ()
-
+@property (nonatomic, strong) EHViewTableView *mTableView;
 @end
 
 @implementation ViewController
@@ -24,10 +25,19 @@
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self addRightButton:rightBtn];
+    
+    [self.view addSubview:self.mTableView];
 }
 
 -(void)saveButtonAction:(UIButton*)sender{
     EHSearchViewController *vc = [[EHSearchViewController alloc] init];
     [self pushViewController:vc];
+}
+
+-(EHViewTableView*)mTableView{
+    if (!_mTableView) {
+        _mTableView = [[EHViewTableView alloc] initWithFrame:CGRectMake(0, NAVBAR_H, SCREEN_W, SCREEN_H/2)];
+    }
+    return _mTableView;
 }
 @end

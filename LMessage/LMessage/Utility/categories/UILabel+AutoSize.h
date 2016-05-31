@@ -10,6 +10,10 @@
 #import <UIKit/UIKit.h>
 @interface UILabel (UILabel_AutoSize)
 
+
+-(void)sizeToFitWithText:(NSString*)text MaxWidth:(CGFloat)maxWidth;
+- (void)sizeToFitWithMaxWidth:(CGFloat)maxWidth;
+
 -(void)setTextWithAdjustWidth:(NSString*)text;
 
 /**

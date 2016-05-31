@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LMessage/ViewController.m"
-            timestampString = "486044377.567699"
+            timestampString = "486370956.177828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-saveButtonAction:"
             landmarkType = "5">
          </BreakpointContent>

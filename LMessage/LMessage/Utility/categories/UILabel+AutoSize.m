@@ -45,6 +45,18 @@
     self.frame =frame;
 }
 
+-(void)sizeToFitWithText:(NSString*)text MaxWidth:(CGFloat)maxWidth{
+    [self setText:text];
+    [self sizeToFitWithMaxWidth:maxWidth];
+}
 
+-(void)sizeToFitWithMaxWidth:(CGFloat)maxWidth{
+    [self sizeToFit];
+    if (CGRectGetWidth(self.frame) > maxWidth) {
+        CGRect frame = self.frame;
+        frame.size.width = maxWidth;
+        [self setFrame:frame];
+    }
+}
 
 @end
