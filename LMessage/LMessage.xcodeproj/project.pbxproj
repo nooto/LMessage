@@ -11,6 +11,21 @@
 		E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */; };
 		E216B57A1CFD3480002FB0CC /* EHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5791CFD3480002FB0CC /* EHBaseObject.m */; };
 		E216B57D1CFD34BA002FB0CC /* EHLocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B57C1CFD34BA002FB0CC /* EHLocationData.m */; };
+		E216B5821CFF13E4002FB0CC /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5811CFF13E4002FB0CC /* MAMapKit.framework */; };
+		E216B5841CFF142D002FB0CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5831CFF142D002FB0CC /* UIKit.framework */; };
+		E216B5861CFF1435002FB0CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5851CFF1435002FB0CC /* Foundation.framework */; };
+		E216B5881CFF143B002FB0CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5871CFF143B002FB0CC /* CoreGraphics.framework */; };
+		E216B58A1CFF1442002FB0CC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5891CFF1442002FB0CC /* QuartzCore.framework */; };
+		E216B58C1CFF1448002FB0CC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B58B1CFF1448002FB0CC /* OpenGLES.framework */; };
+		E216B58E1CFF144F002FB0CC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B58D1CFF144F002FB0CC /* CoreLocation.framework */; };
+		E216B5901CFF1456002FB0CC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B58F1CFF1456002FB0CC /* CoreTelephony.framework */; };
+		E216B5921CFF145D002FB0CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5911CFF145D002FB0CC /* SystemConfiguration.framework */; };
+		E216B5941CFF146C002FB0CC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5931CFF146C002FB0CC /* libz.tbd */; };
+		E216B5961CFF1474002FB0CC /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5951CFF1474002FB0CC /* libstdc++.6.0.9.tbd */; };
+		E216B5981CFF147C002FB0CC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B5971CFF147C002FB0CC /* Security.framework */; };
+		E216B59C1CFF1575002FB0CC /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E216B59B1CFF1575002FB0CC /* AMap.bundle */; };
+		E216B59E1CFF1727002FB0CC /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B59D1CFF1727002FB0CC /* MAMapKit.framework */; };
+		E216B5A01CFF175E002FB0CC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B59F1CFF175E002FB0CC /* libc++.tbd */; };
 		E2528E851C9FF36C0015180D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E841C9FF36C0015180D /* main.m */; };
 		E2528E881C9FF36C0015180D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E871C9FF36C0015180D /* AppDelegate.m */; };
 		E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2528E8F1C9FF36C0015180D /* Assets.xcassets */; };
@@ -87,6 +102,21 @@
 		E216B5791CFD3480002FB0CC /* EHBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHBaseObject.m; sourceTree = "<group>"; };
 		E216B57B1CFD34BA002FB0CC /* EHLocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLocationData.h; sourceTree = "<group>"; };
 		E216B57C1CFD34BA002FB0CC /* EHLocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLocationData.m; sourceTree = "<group>"; };
+		E216B5811CFF13E4002FB0CC /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = ../../../3rdParty/MAMapKit.framework; sourceTree = "<group>"; };
+		E216B5831CFF142D002FB0CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E216B5851CFF1435002FB0CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E216B5871CFF143B002FB0CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E216B5891CFF1442002FB0CC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E216B58B1CFF1448002FB0CC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E216B58D1CFF144F002FB0CC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E216B58F1CFF1456002FB0CC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E216B5911CFF145D002FB0CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E216B5931CFF146C002FB0CC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E216B5951CFF1474002FB0CC /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		E216B5971CFF147C002FB0CC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E216B59B1CFF1575002FB0CC /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = 3rdParty/AMap/MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
+		E216B59D1CFF1727002FB0CC /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = 3rdParty/AMap/MAMapKit.framework; sourceTree = "<group>"; };
+		E216B59F1CFF175E002FB0CC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E2528E801C9FF36C0015180D /* LMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2528E841C9FF36C0015180D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2528E861C9FF36C0015180D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +226,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E216B5A01CFF175E002FB0CC /* libc++.tbd in Frameworks */,
+				E216B5981CFF147C002FB0CC /* Security.framework in Frameworks */,
+				E216B5961CFF1474002FB0CC /* libstdc++.6.0.9.tbd in Frameworks */,
+				E216B5941CFF146C002FB0CC /* libz.tbd in Frameworks */,
+				E216B5921CFF145D002FB0CC /* SystemConfiguration.framework in Frameworks */,
+				E216B5901CFF1456002FB0CC /* CoreTelephony.framework in Frameworks */,
+				E216B58E1CFF144F002FB0CC /* CoreLocation.framework in Frameworks */,
+				E216B58C1CFF1448002FB0CC /* OpenGLES.framework in Frameworks */,
+				E216B58A1CFF1442002FB0CC /* QuartzCore.framework in Frameworks */,
+				E216B5881CFF143B002FB0CC /* CoreGraphics.framework in Frameworks */,
+				E216B5861CFF1435002FB0CC /* Foundation.framework in Frameworks */,
+				E216B5841CFF142D002FB0CC /* UIKit.framework in Frameworks */,
+				E216B59E1CFF1727002FB0CC /* MAMapKit.framework in Frameworks */,
+				E216B5821CFF13E4002FB0CC /* MAMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,9 +271,18 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		E216B57E1CFF115E002FB0CC /* AMap */ = {
+			isa = PBXGroup;
+			children = (
+				E216B5811CFF13E4002FB0CC /* MAMapKit.framework */,
+			);
+			path = AMap;
+			sourceTree = "<group>";
+		};
 		E2528E771C9FF36C0015180D = {
 			isa = PBXGroup;
 			children = (
+				E216B59F1CFF175E002FB0CC /* libc++.tbd */,
 				E2528E821C9FF36C0015180D /* LMessage */,
 				E2528E9C1C9FF36C0015180D /* LMessageTests */,
 				E2528EA71C9FF36C0015180D /* LMessageUITests */,
@@ -250,6 +303,7 @@
 		E2528E821C9FF36C0015180D /* LMessage */ = {
 			isa = PBXGroup;
 			children = (
+				E216B59B1CFF1575002FB0CC /* AMap.bundle */,
 				E216B5771CFD3454002FB0CC /* DataModel */,
 				E27F56EA1CC20E4700D44138 /* UI */,
 				E27F56A01CC20E3B00D44138 /* Utility */,
@@ -273,6 +327,18 @@
 		E2528E831C9FF36C0015180D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E216B59D1CFF1727002FB0CC /* MAMapKit.framework */,
+				E216B5971CFF147C002FB0CC /* Security.framework */,
+				E216B5951CFF1474002FB0CC /* libstdc++.6.0.9.tbd */,
+				E216B5931CFF146C002FB0CC /* libz.tbd */,
+				E216B5911CFF145D002FB0CC /* SystemConfiguration.framework */,
+				E216B58F1CFF1456002FB0CC /* CoreTelephony.framework */,
+				E216B58D1CFF144F002FB0CC /* CoreLocation.framework */,
+				E216B58B1CFF1448002FB0CC /* OpenGLES.framework */,
+				E216B5891CFF1442002FB0CC /* QuartzCore.framework */,
+				E216B5871CFF143B002FB0CC /* CoreGraphics.framework */,
+				E216B5851CFF1435002FB0CC /* Foundation.framework */,
+				E216B5831CFF142D002FB0CC /* UIKit.framework */,
 				E2528E841C9FF36C0015180D /* main.m */,
 				E2528F0E1C9FF6550015180D /* LMessage.pch */,
 			);
@@ -300,6 +366,7 @@
 		E27F567B1CC20E2B00D44138 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E216B57E1CFF115E002FB0CC /* AMap */,
 				E27F567C1CC20E2B00D44138 /* Lumberjack */,
 				E27F56921CC20E2B00D44138 /* MBProgressHUD */,
 			);
@@ -565,6 +632,7 @@
 			files = (
 				E2528E931C9FF36C0015180D /* LaunchScreen.storyboard in Resources */,
 				E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */,
+				E216B59C1CFF1575002FB0CC /* AMap.bundle in Resources */,
 				E27F569E1CC20E2B00D44138 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,6 +837,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",
+					"$(PROJECT_DIR)/3rdParty",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = LMessage/LMessage.pch;
 				INFOPLIST_FILE = LMessage/Info.plist;
@@ -778,6 +851,8 @@
 					"$(PROJECT_DIR)/LMessage/3rdParty",
 					"$(PROJECT_DIR)/LMessage/3rdParty/Packing/Library/MobileSubstrate/DynamicLibraries",
 				);
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.selfwork.LMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -787,6 +862,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",
+					"$(PROJECT_DIR)/3rdParty",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = LMessage/LMessage.pch;
 				INFOPLIST_FILE = LMessage/Info.plist;
@@ -796,6 +876,7 @@
 					"$(PROJECT_DIR)/LMessage/3rdParty",
 					"$(PROJECT_DIR)/LMessage/3rdParty/Packing/Library/MobileSubstrate/DynamicLibraries",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.selfwork.LMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
