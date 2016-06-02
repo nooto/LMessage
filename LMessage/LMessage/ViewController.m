@@ -12,6 +12,7 @@
 #import <MAMapKit/MAMapKit.h>
 @interface ViewController ()<MAMapViewDelegate>
 @property (nonatomic, strong) MAMapView *mMapView;
+@property (nonatomic, strong) AMapLocationManager *mLocationManager;
 @property (nonatomic, strong) EHViewTableView *mTableView;
 @property (nonatomic, strong) UIButton  *mLocationButton;
 @end
