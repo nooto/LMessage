@@ -10,7 +10,8 @@
 #import "EHSearchViewController.h"
 #import "EHViewTableView.h"
 #import <MAMapKit/MAMapKit.h>
-@interface ViewController ()<MAMapViewDelegate>
+#import <AMapLocationKit/AMapLocationKit.h>
+@interface ViewController ()<MAMapViewDelegate, AMapLocationManagerDelegate>
 @property (nonatomic, strong) MAMapView *mMapView;
 @property (nonatomic, strong) AMapLocationManager *mLocationManager;
 @property (nonatomic, strong) EHViewTableView *mTableView;
@@ -48,12 +49,16 @@
     [self pushViewController:vc];
 }
 - (void)locationButtonAction:(UIButton*)sender{
-
-    self.mMapView.showsUserLocation = YES;
+    [self.mLocationManager startUpdatingLocation];
 }
 
 -(void)mapViewDidStopLocatingUser:(MAMapView *)mapView{
     self.mMapView.showsUserLocation = YES;
+}
+
+#pragma mark - 定位
+-(void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+    [self.mMapView setCenterCoordinate:location.coordinate animated:YES];
 }
 
 -(EHViewTableView*)mTableView{
@@ -70,6 +75,14 @@
         _mMapView.showsUserLocation = YES;
     }
     return _mMapView;
+}
+
+-(AMapLocationManager*)mLocationManager{
+    if (!_mLocationManager) {
+        _mLocationManager = [[AMapLocationManager alloc] init];
+        _mLocationManager.delegate = self;
+    }
+    return _mLocationManager;
 }
 
 -(UIButton*)mLocationButton{
