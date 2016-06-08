@@ -32,6 +32,7 @@
 		E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2528E8F1C9FF36C0015180D /* Assets.xcassets */; };
 		E2528E9E1C9FF36C0015180D /* LMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528E9D1C9FF36C0015180D /* LMessageTests.m */; };
 		E2528EA91C9FF36C0015180D /* LMessageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2528EA81C9FF36C0015180D /* LMessageUITests.m */; };
+		E271C8021D06B17800DE17B3 /* EHLocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E271C8011D06B17800DE17B3 /* EHLocationDataManager.m */; };
 		E27C1D7D1CC4C0520068DB96 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C1D7C1CC4C0520068DB96 /* NavigationControllerDelegate.m */; };
 		E27C1D801CC4C8FD0068DB96 /* CircleTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C1D7F1CC4C8FD0068DB96 /* CircleTransitionAnimator.m */; };
 		E27F56951CC20E2B00D44138 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F567E1CC20E2B00D44138 /* DDAbstractDatabaseLogger.m */; };
@@ -132,6 +133,8 @@
 		E2528EA81C9FF36C0015180D /* LMessageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMessageUITests.m; sourceTree = "<group>"; };
 		E2528EAA1C9FF36C0015180D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2528F0E1C9FF6550015180D /* LMessage.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMessage.pch; sourceTree = "<group>"; };
+		E271C8001D06B17800DE17B3 /* EHLocationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLocationDataManager.h; sourceTree = "<group>"; };
+		E271C8011D06B17800DE17B3 /* EHLocationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLocationDataManager.m; sourceTree = "<group>"; };
 		E27C1D7B1CC4C0520068DB96 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
 		E27C1D7C1CC4C0520068DB96 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
 		E27C1D7E1CC4C8FD0068DB96 /* CircleTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTransitionAnimator.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				E216B5791CFD3480002FB0CC /* EHBaseObject.m */,
 				E216B57B1CFD34BA002FB0CC /* EHLocationData.h */,
 				E216B57C1CFD34BA002FB0CC /* EHLocationData.m */,
+				E271C8001D06B17800DE17B3 /* EHLocationDataManager.h */,
+				E271C8011D06B17800DE17B3 /* EHLocationDataManager.m */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 				E27F56D51CC20E3B00D44138 /* NSDateFormatter+Category.m in Sources */,
 				E2528E881C9FF36C0015180D /* AppDelegate.m in Sources */,
 				E27F56DE1CC20E3B00D44138 /* UIView+Frame.m in Sources */,
+				E271C8021D06B17800DE17B3 /* EHLocationDataManager.m in Sources */,
 				E2528E851C9FF36C0015180D /* main.m in Sources */,
 				E27F56DA1CC20E3B00D44138 /* NSTimer+HCTTimerHelp.m in Sources */,
 			);
