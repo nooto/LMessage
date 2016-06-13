@@ -75,6 +75,8 @@
 		E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FA1CC20E6500D44138 /* ViewController.m */; };
 		E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FD1CC20F9100D44138 /* HistoryViewController.m */; };
 		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
+		E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */; };
+		E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +225,10 @@
 		E27F56FD1CC20F9100D44138 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchViewController.h; sourceTree = "<group>"; };
 		E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchViewController.m; sourceTree = "<group>"; };
+		E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		E2C61AAB1D0E9CD100737203 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +513,7 @@
 		E27F56EA1CC20E4700D44138 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E2C61AA81D0E9CD100737203 /* customerUI */,
 				E27F56EB1CC20E4700D44138 /* BaseUI */,
 				E216B5711CFD31C7002FB0CC /* EHViewTableView.h */,
 				E216B5721CFD31C7002FB0CC /* EHViewTableView.m */,
@@ -533,6 +540,17 @@
 				E27C1D7F1CC4C8FD0068DB96 /* CircleTransitionAnimator.m */,
 			);
 			path = BaseUI;
+			sourceTree = "<group>";
+		};
+		E2C61AA81D0E9CD100737203 /* customerUI */ = {
+			isa = PBXGroup;
+			children = (
+				E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */,
+				E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */,
+				E2C61AAB1D0E9CD100737203 /* MGSwipeTableCell.h */,
+				E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */,
+			);
+			path = customerUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,6 +703,7 @@
 				E27F56E41CC20E3B00D44138 /* MJType.m in Sources */,
 				E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */,
 				E27F56E81CC20E3B00D44138 /* SFHFKeychainUtils.m in Sources */,
+				E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */,
 				E27F56E31CC20E3B00D44138 /* MJIvar.m in Sources */,
 				E27F56E51CC20E3B00D44138 /* NSObject+MJCoding.m in Sources */,
 				E27C1D7D1CC4C0520068DB96 /* NavigationControllerDelegate.m in Sources */,
@@ -703,6 +722,7 @@
 				E27F56D91CC20E3B00D44138 /* NSString+XEP_0106.m in Sources */,
 				E27F56D71CC20E3B00D44138 /* NSString+HCTAvailableString.m in Sources */,
 				E27F569B1CC20E2B00D44138 /* DDContextFilterLogFormatter.m in Sources */,
+				E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */,
 				E27F56E21CC20E3B00D44138 /* MJFoundation.m in Sources */,
 				E27F569A1CC20E2B00D44138 /* DDTTYLogger.m in Sources */,
 				E27F56981CC20E2B00D44138 /* DDLog.m in Sources */,
@@ -845,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",
@@ -871,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",

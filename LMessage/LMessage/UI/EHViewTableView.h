@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MGSwipeButton.h"
 @interface EHViewTableView : UITableView
 
 @end

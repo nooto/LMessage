@@ -32,8 +32,8 @@
     [self addRightButton:rightBtn];
     
     [self.view addSubview:self.mTableView];
-    [self.view addSubview:self.mMapView];
-    [self.view addSubview:self.mLocationButton];
+//    [self.view addSubview:self.mMapView];
+//    [self.view addSubview:self.mLocationButton];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -63,7 +63,7 @@
 
 -(EHViewTableView*)mTableView{
     if (!_mTableView) {
-        _mTableView = [[EHViewTableView alloc] initWithFrame:CGRectMake(0, NAVBAR_H, SCREEN_W, SCREEN_H/2)];
+        _mTableView = [[EHViewTableView alloc] initWithFrame:CGRectMake(0, NAVBAR_H, SCREEN_W, SCREEN_H - NAVBAR_H)];
     }
     return _mTableView;
 }

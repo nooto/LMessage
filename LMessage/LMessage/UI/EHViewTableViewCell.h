@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EHLocationData.h"
-@interface EHViewTableViewCell : UITableViewCell
+#import "MGSwipeTableCell.h"
+@interface EHViewTableViewCell : MGSwipeTableCell
 @property (nonatomic, weak) EHLocationData *mLocationData;
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellHeight:(CGFloat)cellHeight;
 @end

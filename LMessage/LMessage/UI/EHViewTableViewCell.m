@@ -10,12 +10,11 @@
 #import "UILabel+AutoSize.h"
 @interface EHViewTableViewCell()
 @property (nonatomic, strong) UILabel *mNameLabel;
-@property (nonatomic, assign) CGFloat cellHeight;
 @end
 
 @implementation EHViewTableViewCell
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellHeight:(CGFloat)cellHeight{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier height:(CGFloat)cellHeight{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier height:cellHeight]) {
         self.cellHeight = cellHeight;
         [self.contentView addSubview:self.mNameLabel];
     }
