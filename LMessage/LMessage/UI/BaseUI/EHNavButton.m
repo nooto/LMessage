@@ -14,8 +14,8 @@
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.imageSize = CGSizeMake(9, 16);
-        self.gapX = MarginW(20);
+        self.imageSize = CGSizeMake(36, 36);
+        self.gapX = MarginW(10);
     }
     return self;
 }

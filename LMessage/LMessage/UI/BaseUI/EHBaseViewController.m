@@ -53,11 +53,15 @@
     [super viewDidLoad];
     [self.view addSubview:self.mNavBarView];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIView *uivew = [[UIView alloc] init];
+    [self.view addSubview:uivew];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    self.automaticallyAdjustsScrollViewInsets = false;
 }
 
 - (void)removeHUD{

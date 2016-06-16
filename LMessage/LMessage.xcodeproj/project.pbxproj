@@ -74,6 +74,10 @@
 		E27F56F71CC20E4700D44138 /* UINavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56F31CC20E4700D44138 /* UINavigationController+Animation.m */; };
 		E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FA1CC20E6500D44138 /* ViewController.m */; };
 		E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F56FD1CC20F9100D44138 /* HistoryViewController.m */; };
+		E280B7521D127EC800807E0A /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B7511D127EC800807E0A /* AMapSearchKit.framework */; };
+		E280B7541D1280F800807E0A /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E280B7531D1280F800807E0A /* AMapFoundationKit.framework */; };
+		E280B7571D12872200807E0A /* EHSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7561D12872200807E0A /* EHSearchTableView.m */; };
+		E280B75A1D12875400807E0A /* EHSearchTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7591D12875400807E0A /* EHSearchTableCellView.m */; };
 		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
 		E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */; };
 		E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */; };
@@ -223,6 +227,12 @@
 		E27F56FA1CC20E6500D44138 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E27F56FC1CC20F9100D44138 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		E27F56FD1CC20F9100D44138 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		E280B7511D127EC800807E0A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		E280B7531D1280F800807E0A /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
+		E280B7551D12872200807E0A /* EHSearchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchTableView.h; sourceTree = "<group>"; };
+		E280B7561D12872200807E0A /* EHSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchTableView.m; sourceTree = "<group>"; };
+		E280B7581D12875400807E0A /* EHSearchTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchTableCellView.h; sourceTree = "<group>"; };
+		E280B7591D12875400807E0A /* EHSearchTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchTableCellView.m; sourceTree = "<group>"; };
 		E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchViewController.h; sourceTree = "<group>"; };
 		E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchViewController.m; sourceTree = "<group>"; };
 		E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -236,12 +246,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E280B7521D127EC800807E0A /* AMapSearchKit.framework in Frameworks */,
 				E216B5A01CFF175E002FB0CC /* libc++.tbd in Frameworks */,
 				E216B5981CFF147C002FB0CC /* Security.framework in Frameworks */,
 				E216B5961CFF1474002FB0CC /* libstdc++.6.0.9.tbd in Frameworks */,
 				E216B5941CFF146C002FB0CC /* libz.tbd in Frameworks */,
 				E216B5921CFF145D002FB0CC /* SystemConfiguration.framework in Frameworks */,
 				E216B5901CFF1456002FB0CC /* CoreTelephony.framework in Frameworks */,
+				E280B7541D1280F800807E0A /* AMapFoundationKit.framework in Frameworks */,
 				E216B58E1CFF144F002FB0CC /* CoreLocation.framework in Frameworks */,
 				E216B58C1CFF1448002FB0CC /* OpenGLES.framework in Frameworks */,
 				E216B58A1CFF1442002FB0CC /* QuartzCore.framework in Frameworks */,
@@ -287,6 +299,8 @@
 		E216B57E1CFF115E002FB0CC /* AMap */ = {
 			isa = PBXGroup;
 			children = (
+				E280B7531D1280F800807E0A /* AMapFoundationKit.framework */,
+				E280B7511D127EC800807E0A /* AMapSearchKit.framework */,
 				E21AA6CA1D058F2900E02B79 /* AMapLocationKit.framework */,
 				E21AA6CB1D058F2900E02B79 /* MAMapKit.framework */,
 			);
@@ -519,6 +533,10 @@
 				E216B5721CFD31C7002FB0CC /* EHViewTableView.m */,
 				E216B5741CFD32FD002FB0CC /* EHViewTableViewCell.h */,
 				E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */,
+				E280B7551D12872200807E0A /* EHSearchTableView.h */,
+				E280B7561D12872200807E0A /* EHSearchTableView.m */,
+				E280B7581D12875400807E0A /* EHSearchTableCellView.h */,
+				E280B7591D12875400807E0A /* EHSearchTableCellView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -690,6 +708,7 @@
 				E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */,
 				E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */,
 				E27F56DF1CC20E3B00D44138 /* EHSysProperty.m in Sources */,
+				E280B7571D12872200807E0A /* EHSearchTableView.m in Sources */,
 				E27F56D81CC20E3B00D44138 /* NSString+hex.m in Sources */,
 				E27C1D801CC4C8FD0068DB96 /* CircleTransitionAnimator.m in Sources */,
 				E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */,
@@ -714,6 +733,7 @@
 				E27F56971CC20E2B00D44138 /* DDFileLogger.m in Sources */,
 				E27F56D61CC20E3B00D44138 /* NSDictionary+Category.m in Sources */,
 				E27F569F1CC20E2B00D44138 /* MBProgressHUD.m in Sources */,
+				E280B75A1D12875400807E0A /* EHSearchTableCellView.m in Sources */,
 				E27F56DD1CC20E3B00D44138 /* UITextField+Placeholder.m in Sources */,
 				E27F56E71CC20E3B00D44138 /* NSObject+MJKeyValue.m in Sources */,
 				E216B57D1CFD34BA002FB0CC /* EHLocationData.m in Sources */,

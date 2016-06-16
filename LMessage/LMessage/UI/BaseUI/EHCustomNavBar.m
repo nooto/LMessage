@@ -46,8 +46,8 @@
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     self.mTextLabel = titleLabel;
     
-    EHNavButton* leftButton =  [[EHNavButton alloc] initWithFrame:CGRectMake(0, 0, NAVBAR_H*2, NAVBAR_H)];
-    [leftButton setImage:[UIImage imageNamed:@"global_arrow_previous"] forState:UIControlStateNormal];
+    EHNavButton* leftButton =  [[EHNavButton alloc] initWithFrame:CGRectMake(0, 0, NAVBAR_H, NAVBAR_H)];
+    [leftButton setImage:[UIImage imageNamed:@"ic_back"] forState:UIControlStateNormal];
 //    [leftButton setImage:[UIImage imageNamed:@"btn_login_back_pressed"] forState:UIControlStateHighlighted];
     [leftButton addTarget:self action:@selector(leftButonAction:) forControlEvents:UIControlEventTouchUpInside];
     leftButton.titleLabel.font = _mTextLabel.font;

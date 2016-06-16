@@ -7,7 +7,7 @@
 //
 
 #import "EHBaseViewController.h"
-
+#import <AMapSearchKit/AMapSearchKit.h>
 @interface EHSearchViewController : EHBaseViewController
 
 @end

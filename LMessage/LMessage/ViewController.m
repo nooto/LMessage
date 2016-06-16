@@ -30,6 +30,7 @@
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self addRightButton:rightBtn];
+    [self hiddeBackButton];
     
     [self.view addSubview:self.mTableView];
 //    [self.view addSubview:self.mMapView];

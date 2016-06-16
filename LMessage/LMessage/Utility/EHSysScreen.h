@@ -9,6 +9,7 @@
 #define SCREEN_W                [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_H                [[UIScreen mainScreen] bounds].size.height
 #define NAVBAR_H                [EHSysProperty         getNavBarHight]
+#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
 
 #define TABBAR_H                                       52
 #define KBGIMAGEVIEWTAG                                31415926

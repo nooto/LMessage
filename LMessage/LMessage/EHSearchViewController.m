@@ -7,53 +7,94 @@
 //
 
 #import "EHSearchViewController.h"
-@interface EHSearchViewController() <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) UISearchController *mSearchController;
-@property (nonatomic, strong) UITableView*mTableView;
+#import "EHSearchTableView.h"
+@interface EHSearchViewController() <EHSearchTableViewDelegate, AMapSearchDelegate>
+@property (nonatomic, strong) UITextField *mTextField;
+@property (nonatomic, strong) EHSearchTableView*mTableView;
 @property (nonatomic, strong) NSMutableArray *mSourceDatas;
+@property (nonatomic, strong) AMapSearchAPI *mSearchAPI;
+@property (nonatomic, strong) AMapPOIAroundSearchRequest *mAroundRequest;
 @end
 @implementation EHSearchViewController
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [self.view addSubview:self.mTextField];
     [self.view addSubview:self.mTableView];
-    self.mTableView.tableHeaderView = self.mSearchController.searchBar;
+    self.automaticallyAdjustsScrollViewInsets = false;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+}
 
-#pragma mark - 
--(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSString *searchString = [self.mSearchController.searchBar text];
-    [self.mSourceDatas addObject:searchString];
+-(void)textFieldDidChange:(NSObject*)sender{
+    [self.mAroundRequest setKeywords:self.mTextField.text];
+    [self.mSearchAPI cancelAllRequests];
+    [self.mSearchAPI AMapPOIAroundSearch:self.mAroundRequest];
+}
+
+#pragma mark -
+
+-(void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
+    if (response.pois.count <= 0) {
+        return;
+    }
+    
+    [self.mSourceDatas removeAllObjects];
+    [self.mSourceDatas addObjectsFromArray:response.pois];
     [self.mTableView reloadData];
+}
+
+-(void)searchButtonAction:(UIButton*)sender{
+    [self.mTextField resignFirstResponder];
 }
 
 
 #pragma mark - UITableView
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.mSourceDatas.count;
+-(NSArray*)seachTableViewSourceDatas{
+    return self.mSourceDatas;
 }
 
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"showDropDownListViewCell";
+- (void)didSelectAMAPPOI:(AMapPOI *)mapPOI{
+    [self.mTextField resignFirstResponder];
+}
+
+- (void)didSelectAddAMAPPOI:(AMapPOI *)mapPOI{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    if (indexPath.row < self.mSourceDatas.count) {
-        [cell.textLabel setText:self.mSourceDatas[indexPath.row]];
-        [cell.textLabel setTextColor:[UIColor redColor]];
-    }
-    return cell;
 }
 
--(UITableView*)mTableView{
+-(UITextField*)mTextField{
+    if (!_mTextField) {
+        _mTextField = [[UITextField alloc] initWithFrame:CGRectMake(MarginW(50), 20, SCREEN_W - MarginW(100), MarginH(44))];
+        _mTextField.layer.cornerRadius = 15.0f;
+        _mTextField.layer.borderColor = Color_white_50.CGColor;
+        _mTextField.layer.borderWidth = 1.0f;
+        [_mTextField setPlaceholder:@"请输入内容。。。" WithColor:[UIColor grayColor]];
+        
+        
+        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, CGRectGetHeight(_mTextField.frame))];
+        [_mTextField setLeftView:leftView];
+        _mTextField.leftViewMode = UITextFieldViewModeAlways;
+        
+        UIButton *searchButton= [[UIButton alloc] initWithFrame:CGRectMake(0, 0, CGRectGetHeight(_mTextField.frame)-10, CGRectGetHeight(_mTextField.frame))];
+        [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [searchButton setImage:[UIImage imageNamed:@"ic_search"] forState:UIControlStateNormal];
+        [_mTextField setRightView:searchButton];
+        _mTextField.rightViewMode = UITextFieldViewModeAlways;
+    }
+    return _mTextField;
+}
+
+
+-(EHSearchTableView*)mTableView{
     if (!_mTableView) {
-        _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NAVBAR_H, SCREEN_W, SCREEN_H - NAVBAR_H) style:UITableViewStyleGrouped];
-        _mTableView.delegate = self;
-        _mTableView.dataSource = self;
-        _mTableView.rowHeight = MarginH(45);
+        _mTableView = [[EHSearchTableView alloc] initWithFrame:CGRectMake(0, NAVBAR_H, SCREEN_W, SCREEN_H - NAVBAR_H) withDelegate:self];
     }
     return _mTableView;
 }
@@ -64,16 +105,30 @@
     }
     return _mSourceDatas;
 }
--(UISearchController*)mSearchController{
-    if (!_mSearchController) {
-        _mSearchController = [[UISearchController alloc] init];
-        _mSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-        _mSearchController.searchResultsUpdater = self;
-        _mSearchController.dimsBackgroundDuringPresentation = NO;
-        _mSearchController.hidesNavigationBarDuringPresentation = NO;
-        _mSearchController.searchBar.frame = CGRectMake(_mSearchController.searchBar.frame.origin.x, _mSearchController.searchBar.frame.origin.y, _mSearchController.searchBar.frame.size.width, 44.0);
-//        self.mTableView.tableHeaderView = _mSearchController.searchBar;
+
+-(AMapSearchAPI*)mSearchAPI{
+    if (!_mSearchAPI) {
+        _mSearchAPI = [[AMapSearchAPI alloc] init];
+        _mSearchAPI.delegate = self;
     }
-    return _mSearchController;
+    return _mSearchAPI;
 }
+
+- (AMapPOIAroundSearchRequest*)mAroundRequest{
+    if (!_mAroundRequest) {
+        _mAroundRequest = [[AMapPOIAroundSearchRequest alloc] init];
+        _mAroundRequest.location = [AMapGeoPoint locationWithLatitude:39.990459 longitude:116.481476];
+//        request.keywords = @"方恒";
+        // types属性表示限定搜索POI的类别，默认为：餐饮服务|商务住宅|生活服务
+        // POI的类型共分为20种大类别，分别为：
+        // 汽车服务|汽车销售|汽车维修|摩托车服务|餐饮服务|购物服务|生活服务|体育休闲服务|
+        // 医疗保健服务|住宿服务|风景名胜|商务住宅|政府机构及社会团体|科教文化服务|
+        // 交通设施服务|金融保险服务|公司企业|道路附属设施|地名地址信息|公共设施
+//        request.types = @"餐饮服务|生活服务";
+        _mAroundRequest.sortrule = 0;
+        _mAroundRequest.requireExtension = YES;
+    }
+    return _mAroundRequest;
+}
+
 @end
