@@ -7,7 +7,8 @@
 //
 
 #import "EHBaseViewController.h"
+#import "EHLocationDataManager.h"
 #import <AMapSearchKit/AMapSearchKit.h>
 @interface EHSearchViewController : EHBaseViewController
-
+@property (nonatomic, copy) void(^didAddLocationFinesh)();
 @end

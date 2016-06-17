@@ -15,8 +15,21 @@
     }
     return self;
 }
-
+-(id)initWithAMapPOI:(AMapPOI *)mapPOI{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 -(void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.locationName forKey:STR_locationName];
 }
+
+-(void)paresMapPOI:(AMapPOI*)mapPOI{
+    self.locationName = mapPOI.name;
+    self.address = mapPOI.address;
+    self.locationCoordinate = CLLocationCoordinate2DMake(mapPOI.location.latitude, mapPOI.location.longitude);
+    
+}
+
 @end

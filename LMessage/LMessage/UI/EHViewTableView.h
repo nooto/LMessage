@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MGSwipeButton.h"
+#import "EHLocationDataManager.h"
 @interface EHViewTableView : UITableView
-
+-(void)updateViewWithCLLocationCoordinate:(CLLocationCoordinate2D)locationCoord;
 @end

@@ -10,5 +10,5 @@
 #import "EHLocationData.h"
 #import "MGSwipeTableCell.h"
 @interface EHViewTableViewCell : MGSwipeTableCell
-@property (nonatomic, weak) EHLocationData *mLocationData;
+- (void)loardTableCellWithLocationData:(EHLocationData*)locationData curPostion:(CLLocationCoordinate2D)locationCoord;
 @end

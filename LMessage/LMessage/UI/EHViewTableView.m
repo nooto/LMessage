@@ -11,6 +11,7 @@
 #define CellIdentifier @"EHViewTableViewCell"
 @interface EHViewTableView() <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 @property (nonatomic, strong) NSMutableArray *mDataSoure;
+@property (nonatomic, assign) CLLocationCoordinate2D mLocationCoordinate;
 //@property (nonatomic, strong) UIView
 @end
 
@@ -22,9 +23,13 @@
     }
     return self;
 }
+- (void)updateViewWithCLLocationCoordinate:(CLLocationCoordinate2D)locationCoord{
+    self.mLocationCoordinate = locationCoord;
+    self.mDataSoure = nil;
+    [self reloadData];
+}
 #pragma mark - 列表类。。。
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 30;
     return self.mDataSoure.count;
 }
 
@@ -40,8 +45,8 @@
     cell.delegate = self;
     cell.rightSwipeSettings.transition = MGSwipeTransitionBorder;
     cell.swipeBackgroundColor = [UIColor clearColor];
-
-    [cell setMLocationData:nil];
+    
+    [cell loardTableCellWithLocationData:self.mDataSoure[indexPath.row] curPostion:self.mLocationCoordinate];
     return cell;
 }
 
@@ -83,9 +88,18 @@
 -(BOOL)swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion
 {
     if (direction == MGSwipeDirectionRightToLeft) {
+        //删除
         if (index == 0) {
-            
+            NSIndexPath *index = [self indexPathForCell:cell];
+            if (index) {
+                [LocationDataManager removeMLocationData:[self.mDataSoure objectAtIndex:index.row]];
+                [self.mDataSoure removeObjectAtIndex:index.row];
+                [self beginUpdates];
+                [self deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
+                [self endUpdates];
+            }
         }
+        //编辑。。
         else if (index == 1){
             
         }
@@ -95,7 +109,7 @@
 
 -(NSMutableArray*)mDataSoure{
     if (!_mDataSoure) {
-        _mDataSoure = [[NSMutableArray alloc] initWithCapacity:1];
+        _mDataSoure = [[NSMutableArray alloc] initWithArray:LocationDataManager.mLocationDatas];
     }
     return _mDataSoure;
 }

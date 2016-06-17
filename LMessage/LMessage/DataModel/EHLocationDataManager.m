@@ -37,10 +37,17 @@ __strong static EHLocationDataManager *shareInstance = nil;
 }
 
 -(void)addMLocationData:(EHLocationData*)locationData{
-    if (locationData) {
-        [self.mLocationDatas addObject:locationData];
-        [self saveLocationDatas];
+    if (!locationData) {
+        return;
     }
+    for (EHLocationData *tempData in self.mLocationDatas) {
+        if ([tempData isEqual:locationData]) {
+            return;
+        }
+    }
+    [self.mLocationDatas addObject:locationData];
+    [self saveLocationDatas];
+    
 }
 
 -(void)removeMLocationData:(EHLocationData *)locationData{

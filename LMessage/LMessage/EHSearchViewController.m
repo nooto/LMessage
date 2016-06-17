@@ -40,6 +40,13 @@
 }
 
 #pragma mark -
+-(void)backBtnPressed:(UIButton *)sender{
+    [super backBtnPressed:sender];
+    if (self.didAddLocationFinesh) {
+        self.didAddLocationFinesh();
+    }
+}
+
 
 -(void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
     if (response.pois.count <= 0) {
@@ -66,7 +73,7 @@
 }
 
 - (void)didSelectAddAMAPPOI:(AMapPOI *)mapPOI{
-    
+    [LocationDataManager addMLocationData:[[EHLocationData alloc] initWithAMapPOI:mapPOI]];
 }
 
 -(UITextField*)mTextField{

@@ -23,6 +23,7 @@
         [self.contentView addSubview:self.mNameLabel];
         [self.contentView addSubview:self.mAddButtton];
         [self.contentView addSubview:self.mDetailLabel];
+        [self.contentView addSubview:self.mMapView];
     }
     return self;
 }

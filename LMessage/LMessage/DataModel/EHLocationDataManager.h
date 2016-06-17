@@ -10,6 +10,11 @@
 #import "EHLocationData.h"
 @interface EHLocationDataManager : EHBaseObject
 @property (nonatomic, strong) NSMutableArray *mLocationDatas;
+
++(EHLocationDataManager*)shareInstance;
 -(void)addMLocationData:(EHLocationData*)locationData;
 -(void)removeMLocationData:(EHLocationData*)locationData;
 @end
+
+#define LocationDataManager [EHLocationDataManager shareInstance]
+
