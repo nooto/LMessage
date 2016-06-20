@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <AMapFoundationKit/AMapFoundationKit.h>
 @interface AppDelegate ()
 
 @end
@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    [AMapServices sharedServices].apiKey = @"889cd97ed29db9241875f5b28c5b4116";
     CGRect fram = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:fram];
     [self.window makeKeyAndVisible];

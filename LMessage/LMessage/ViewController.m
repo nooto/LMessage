@@ -12,6 +12,7 @@
 #import <MAMapKit/MAMapKit.h>
 #import "MJRefresh.h"
 #import <AMapLocationKit/AMapLocationKit.h>
+#import "EHMapViewController.h"
 @interface ViewController ()<MAMapViewDelegate, AMapLocationManagerDelegate>
 @property (nonatomic, strong) AMapLocationManager *mLocationManager;
 
@@ -27,15 +28,26 @@
     rightBtn.titleLabel.font = Font15;
     rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [rightBtn addTarget:self action:@selector(saveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
     [self addRightButton:rightBtn];
+    
+    
     [self hiddeBackButton];
+
+    UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H+20, NAVBAR_H - 20)];
+    seachBtn.center = CGPointMake(SCREEN_W/2, CGRectGetHeight(self.mNavBarView.frame)/2 + 20);
+    seachBtn.titleLabel.font = Font15;
+    [seachBtn setTitle:@"搜索" forState:UIControlStateNormal];
+    seachBtn.backgroundColor = [UIColor redColor];
+    seachBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [seachBtn addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [seachBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+    [self.mNavBarView addSubview:seachBtn];
     
     [self.view addSubview:self.mTableView];
 }
 
--(void)saveButtonAction:(UIButton*)sender{
+- (void)searchButtonAction:(UIButton*)sender{
     EHSearchViewController *vc = [[EHSearchViewController alloc] init];
     
     WS(weakSelf);
@@ -43,6 +55,11 @@
         [weakSelf updateView];
     }];
     
+    [self pushViewController:vc];
+}
+
+-(void)saveButtonAction:(UIButton*)sender{
+    EHMapViewController *vc = [[EHMapViewController alloc] init];
     [self pushViewController:vc];
 }
 

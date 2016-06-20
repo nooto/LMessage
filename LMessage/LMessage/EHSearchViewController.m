@@ -8,6 +8,7 @@
 
 #import "EHSearchViewController.h"
 #import "EHSearchTableView.h"
+#import <AMapSearchKit/AMapSearchKit.h>
 @interface EHSearchViewController() <EHSearchTableViewDelegate, AMapSearchDelegate>
 @property (nonatomic, strong) UITextField *mTextField;
 @property (nonatomic, strong) EHSearchTableView*mTableView;
@@ -19,6 +20,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //配置用户Key
     [self.view addSubview:self.mTextField];
     [self.view addSubview:self.mTableView];
     self.automaticallyAdjustsScrollViewInsets = false;
@@ -34,9 +37,9 @@
 }
 
 -(void)textFieldDidChange:(NSObject*)sender{
-    [self.mAroundRequest setKeywords:self.mTextField.text];
-    [self.mSearchAPI cancelAllRequests];
-    [self.mSearchAPI AMapPOIAroundSearch:self.mAroundRequest];
+//    [self.mAroundRequest setKeywords:self.mTextField.text];
+//    [self.mSearchAPI cancelAllRequests];
+//    [self.mSearchAPI AMapPOIAroundSearch:self.mAroundRequest];
 }
 
 #pragma mark -
@@ -47,6 +50,10 @@
     }
 }
 
+#pragma mark - 
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error{
+    NSLog(@"%@",error.description);
+}
 
 -(void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
     if (response.pois.count <= 0) {
@@ -59,6 +66,9 @@
 }
 
 -(void)searchButtonAction:(UIButton*)sender{
+    [self.mSearchAPI cancelAllRequests];
+    [self.mAroundRequest setKeywords:self.mTextField.text];
+    [self.mSearchAPI AMapPOIAroundSearch:self.mAroundRequest];
     [self.mTextField resignFirstResponder];
 }
 
@@ -74,6 +84,7 @@
 
 - (void)didSelectAddAMAPPOI:(AMapPOI *)mapPOI{
     [LocationDataManager addMLocationData:[[EHLocationData alloc] initWithAMapPOI:mapPOI]];
+//    [LocationDataManager saveLocationDatas];
 }
 
 -(UITextField*)mTextField{
@@ -82,6 +93,7 @@
         _mTextField.layer.cornerRadius = 15.0f;
         _mTextField.layer.borderColor = Color_white_50.CGColor;
         _mTextField.layer.borderWidth = 1.0f;
+        _mTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_mTextField setPlaceholder:@"请输入内容。。。" WithColor:[UIColor grayColor]];
         
         
@@ -97,7 +109,6 @@
     }
     return _mTextField;
 }
-
 
 -(EHSearchTableView*)mTableView{
     if (!_mTableView) {

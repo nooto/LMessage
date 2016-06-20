@@ -16,6 +16,7 @@ __strong static EHLocationDataManager *shareInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shareInstance = [[EHLocationDataManager alloc] init];
+        [shareInstance loardFromeUser];
     });
     return shareInstance;
 }

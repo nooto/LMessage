@@ -23,7 +23,7 @@
         [self.contentView addSubview:self.mNameLabel];
         [self.contentView addSubview:self.mAddButtton];
         [self.contentView addSubview:self.mDetailLabel];
-        [self.contentView addSubview:self.mMapView];
+//        [self.contentView addSubview:self.mMapView];
     }
     return self;
 }
@@ -74,7 +74,7 @@
     self.mapPOI = mapPOI;
     [self.mMapView setCenterCoordinate:CLLocationCoordinate2DMake(mapPOI.location.latitude, mapPOI.location.longitude) animated:YES];
     
-    self.mMapView.hidden = type;
+    self.mMapView.hidden = !type;
     [self.mNameLabel setText:mapPOI.name];
     [self.mDetailLabel setText:mapPOI.address];
 }

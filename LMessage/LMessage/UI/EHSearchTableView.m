@@ -15,24 +15,22 @@
 
 @implementation EHSearchTableView
 -(id)initWithFrame:(CGRect)frame withDelegate:(id)delegate{
-    if (self = [super initWithFrame:frame style:UITableViewStyleGrouped]) {
+    if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
         self.dataSource = self;
         self.selectIndex = -1;
         self.m_delegate = delegate;
         self.delegate = self;
-        self.rowHeight = MarginH(55);
     }
     return self;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == self.selectIndex) {
-        return MarginH(120);
-    }
-    else{
+//    if (indexPath.row == self.selectIndex) {
+//        return MarginH(120);
+//    }
+//    else{
         return MarginH(60);
-    }
+//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -45,7 +43,7 @@
     if (!cell) {
         cell = [[EHSearchTableCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+            
         WS(weakSelf);
         [cell setDidSelectAddPOI:^(AMapPOI *mapPOI) {
             if (weakSelf.m_delegate && [weakSelf.m_delegate respondsToSelector:@selector(didSelectAddAMAPPOI:)]) {
@@ -55,10 +53,10 @@
     }
     [cell loardMapPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row] showType: self.selectIndex == indexPath.row ? 1: 0];
     return cell;
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:2];
     if (self.selectIndex < 0) {
         [arr addObject:indexPath];
@@ -68,6 +66,7 @@
             [arr addObject:[NSIndexPath indexPathForRow:self.selectIndex inSection:0]];
         }
     }
+    
     [arr addObject:indexPath];
     
     
@@ -77,9 +76,10 @@
     self.selectIndex = indexPath.row;
     
     //
-    [self beginUpdates];
-    [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationTop];
-    [self endUpdates];
+    [self reloadData];
+//    [self beginUpdates];
+//    [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationNone];
+//    [self endUpdates];
 
     
     if (self.m_delegate && [self.m_delegate respondsToSelector:@selector(didSelectAMAPPOI:)]) {

@@ -34,7 +34,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return MarginH(50);
+    return MarginH(60);
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -55,13 +55,13 @@
 {
     swipeSettings.transition = MGSwipeTransitionBorder;
     if (direction == MGSwipeDirectionRightToLeft){
-        MGSwipeButton * button = [MGSwipeButton buttonWithTitle:@"编辑" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
-            DDLogInfo(@"Convenience callback received (right).");
-            return YES;
-        }];
-        [button.titleLabel setFont:Font16];
-        [button setTitleColor:Color_white_100 forState:UIControlStateNormal];
-        [button setTitleColor:Color_white_50 forState:UIControlStateDisabled];
+//        MGSwipeButton * button = [MGSwipeButton buttonWithTitle:@"编辑" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
+//            DDLogInfo(@"Convenience callback received (right).");
+//            return YES;
+//        }];
+//        [button.titleLabel setFont:Font16];
+//        [button setTitleColor:Color_white_100 forState:UIControlStateNormal];
+//        [button setTitleColor:Color_white_50 forState:UIControlStateDisabled];
         
         MGSwipeButton * button1 = [MGSwipeButton buttonWithTitle:@"删除" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
             DDLogInfo(@"Convenience callback received (right).");
@@ -71,7 +71,7 @@
         [button1 setTitleColor:Color_white_100 forState:UIControlStateNormal];
         [button1 setTitleColor:Color_white_50 forState:UIControlStateDisabled];
         button1.backgroundColor = [UIColor grayColor];
-        return @[button, button1];
+        return @[button1];
     }
     
     return nil;

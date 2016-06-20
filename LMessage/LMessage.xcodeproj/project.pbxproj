@@ -86,6 +86,7 @@
 		E280B7711D13DC3000807E0A /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7671D13DC3000807E0A /* UIScrollView+Extension.m */; };
 		E280B7721D13DC3000807E0A /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7691D13DC3000807E0A /* UIScrollView+MJRefresh.m */; };
 		E280B7731D13DC3000807E0A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B76B1D13DC3000807E0A /* UIView+Extension.m */; };
+		E280B7761D17A1AD00807E0A /* EHMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7751D17A1AD00807E0A /* EHMapViewController.m */; };
 		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
 		E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */; };
 		E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */; };
@@ -257,6 +258,8 @@
 		E280B7691D13DC3000807E0A /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		E280B76A1D13DC3000807E0A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		E280B76B1D13DC3000807E0A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		E280B7741D17A1AD00807E0A /* EHMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMapViewController.h; sourceTree = "<group>"; };
+		E280B7751D17A1AD00807E0A /* EHMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMapViewController.m; sourceTree = "<group>"; };
 		E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchViewController.h; sourceTree = "<group>"; };
 		E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchViewController.m; sourceTree = "<group>"; };
 		E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -562,6 +565,8 @@
 				E280B7561D12872200807E0A /* EHSearchTableView.m */,
 				E280B7581D12875400807E0A /* EHSearchTableCellView.h */,
 				E280B7591D12875400807E0A /* EHSearchTableCellView.m */,
+				E280B7741D17A1AD00807E0A /* EHMapViewController.h */,
+				E280B7751D17A1AD00807E0A /* EHMapViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -764,6 +769,7 @@
 				E27C1D801CC4C8FD0068DB96 /* CircleTransitionAnimator.m in Sources */,
 				E27F56FB1CC20E6500D44138 /* ViewController.m in Sources */,
 				E27F569C1CC20E2B00D44138 /* DDDispatchQueueLogFormatter.m in Sources */,
+				E280B7761D17A1AD00807E0A /* EHMapViewController.m in Sources */,
 				E27F56E11CC20E3B00D44138 /* MJConst.m in Sources */,
 				E27F56E61CC20E3B00D44138 /* NSObject+MJIvar.m in Sources */,
 				E27F56F51CC20E4700D44138 /* EHCustomNavBar.m in Sources */,

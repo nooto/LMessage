@@ -22,6 +22,7 @@
         [self.contentView addSubview:self.mNameLabel];
         [self.contentView addSubview:self.addressLabel];
         [self.contentView addSubview:self.distanceLabel];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -29,6 +30,8 @@
 -(UILabel*)mNameLabel{
     if (!_mNameLabel) {
         _mNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(MarginH(20), 0, SCREEN_W/2, MarginH(25))];
+        _mNameLabel.font = Font15;
+        [_mNameLabel setTextColor:Color_black_50];
         _mNameLabel.center = CGPointMake(_mNameLabel.center.x, self.cellHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
     }
     return _mNameLabel;
@@ -38,6 +41,8 @@
 -(UILabel*)addressLabel{
     if (!_addressLabel) {
         _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(MarginH(20), 0, SCREEN_W/2, MarginH(25))];
+        _addressLabel.font = Font13;
+        [_addressLabel setTextColor:Color_black_30];
         _addressLabel.center = CGPointMake(_mNameLabel.center.x, self.cellHeight/2+CGRectGetHeight(_addressLabel.frame)/2);
     }
     return _addressLabel;
@@ -46,16 +51,19 @@
 
 -(UILabel*)distanceLabel{
     if (!_distanceLabel) {
-        _distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(MarginH(20), 0, SCREEN_W/2, MarginH(25))];
-        _distanceLabel.center = CGPointMake(_mNameLabel.center.x, self.cellHeight/2);
+        _distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.mNameLabel.frame), 0, SCREEN_W - CGRectGetMaxX(self.mNameLabel.frame) - MarginH(20), MarginH(25))];
+        _distanceLabel.textAlignment = NSTextAlignmentRight;
+        _distanceLabel.font = Font13;
+        [_distanceLabel setTextColor:Color_Main];
+        _distanceLabel.center = CGPointMake(_distanceLabel.center.x, self.cellHeight/2);
     }
     return _distanceLabel;
 }
 
 - (void)loardTableCellWithLocationData:(EHLocationData*)locationData curPostion:(CLLocationCoordinate2D)locationCoord{
     self.mLocationData = locationData;
-    [self.mNameLabel sizeToFitWithText:locationData.locationName MaxWidth:SCREEN_W/2];
-    [self.distanceLabel sizeToFitWithText:locationData.address MaxWidth:SCREEN_W/2];
+    [self.mNameLabel setText:locationData.locationName];
+    [self.addressLabel setText:locationData.address];
     
     CLLocation *curLocatioi = [[CLLocation alloc] initWithCoordinate:locationCoord altitude:kCLDistanceFilterNone horizontalAccuracy:kCLLocationAccuracyBest verticalAccuracy:kCLLocationAccuracyBest timestamp:[NSDate date]];
     CLLocation *curLocatioi11 = [[CLLocation alloc] initWithCoordinate:locationData.locationCoordinate altitude:kCLDistanceFilterNone horizontalAccuracy:kCLLocationAccuracyBest verticalAccuracy:kCLLocationAccuracyBest timestamp:[NSDate date]];

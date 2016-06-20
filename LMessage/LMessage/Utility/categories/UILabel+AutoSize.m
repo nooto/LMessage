@@ -55,6 +55,9 @@
     if (CGRectGetWidth(self.frame) > maxWidth) {
         CGRect frame = self.frame;
         frame.size.width = maxWidth;
+        if (self.textAlignment == NSTextAlignmentRight) {
+            frame.origin.x = frame.origin.x + maxWidth - frame.size.width;
+        }
         [self setFrame:frame];
     }
 }

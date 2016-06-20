@@ -12,6 +12,7 @@
 @property (nonatomic, strong) NSMutableArray *mLocationDatas;
 
 +(EHLocationDataManager*)shareInstance;
+-(void)saveLocationDatas;
 -(void)addMLocationData:(EHLocationData*)locationData;
 -(void)removeMLocationData:(EHLocationData*)locationData;
 @end
