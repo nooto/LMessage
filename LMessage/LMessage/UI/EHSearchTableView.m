@@ -89,10 +89,6 @@
     
     //
     [self reloadData];
-//    [self beginUpdates];
-//    [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationNone];
-//    [self endUpdates];
-
     
     if (self.m_delegate && [self.m_delegate respondsToSelector:@selector(didSelectAMAPPOI:)]) {
         [self.m_delegate didSelectAMAPPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row]];
