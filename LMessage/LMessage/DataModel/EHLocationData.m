@@ -44,7 +44,34 @@
     self.locationName = mapPOI.name;
     self.address = mapPOI.address;
     self.locationCoordinate = CLLocationCoordinate2DMake(mapPOI.location.latitude, mapPOI.location.longitude);
-    
 }
+
+-(BOOL)isEqualToMapPoi:(AMapPOI*)mapPOI{
+    CGFloat  gap = 5.0f;
+    CGFloat lognGap = fabs(mapPOI.location.longitude  - self.locationCoordinate.longitude);
+    CGFloat latitudeGap = fabs(mapPOI.location.latitude  - self.locationCoordinate.latitude);
+
+    NSLog(@"mapPOI: ---------%f ------- %f  ", mapPOI.location.longitude , mapPOI.location.latitude );
+    NSLog(@"mapPOI: ---------%@ ------- %@  ", mapPOI.address , mapPOI.name );
+
+
+    NSLog(@"locationData: -------%f -------- %f  ", self.locationCoordinate.longitude, self.locationCoordinate.latitude);
+    NSLog(@"locationData: -------%@ -------- %@  ", self.locationName, self.address);
+
+    NSLog(@"gap:  ---------%f ------ %f  ", lognGap, latitudeGap);
+    NSLog(@"gap:  ---------%f ------ %f  ", lognGap, latitudeGap);
+
+    if ([self.locationName isEqualToString:mapPOI.name]) {
+        if ([self.address isEqualToString:mapPOI.address]) {
+            if (lognGap <= gap && latitudeGap <= gap) {
+                return YES;
+            }
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
 
 @end

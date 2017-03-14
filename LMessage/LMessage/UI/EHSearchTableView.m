@@ -10,14 +10,14 @@
 #import "EHSearchTableCellView.h"
 @interface EHSearchTableView() <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) id<EHSearchTableViewDelegate> m_delegate;
-@property (nonatomic, assign) NSInteger  selectIndex;
+@property (nonatomic, assign) NSInteger  showDetailViewIndex;
 @end
 
 @implementation EHSearchTableView
 -(id)initWithFrame:(CGRect)frame withDelegate:(id)delegate{
     if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
         self.dataSource = self;
-        self.selectIndex = -1;
+        self.showDetailViewIndex = -1;
         self.m_delegate = delegate;
         self.delegate = self;
     }
@@ -37,12 +37,12 @@
 }
 #pragma mark =
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.row == self.selectIndex) {
-//        return MarginH(120);
-//    }
-//    else{
-        return MarginH(60);
-//    }
+    if (indexPath.row == self.showDetailViewIndex) {
+        return CellTopHeight + CellBottomHeight;
+    }
+    else{
+        return CellTopHeight;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -63,33 +63,40 @@
             }
         }];
     }
-    [cell loardMapPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row] showType: self.selectIndex == indexPath.row ? 1: 0];
+    [cell loardMapPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row]
+             showType: self.showDetailViewIndex == indexPath.row ? 1: 0];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+//    EHSearchTableCellView *cellView = [tableView cellForRowAtIndexPath:indexPath];
+//    if ([cellView isKindOfClass:[EHSearchTableCellView class]]) {
+//        if (cellView.isContained) {
+//            return;
+//        }
+//    }
+
     NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:2];
-    if (self.selectIndex < 0) {
+    if (self.showDetailViewIndex < 0) {
         [arr addObject:indexPath];
+        self.showDetailViewIndex = indexPath.row;
+    }
+    else if (self.showDetailViewIndex == indexPath.row){
+        [arr addObject:indexPath];
+        self.showDetailViewIndex = -1;
     }
     else{
-        if (self.selectIndex != indexPath.row) {
-            [arr addObject:[NSIndexPath indexPathForRow:self.selectIndex inSection:0]];
-        }
+        [arr addObject:[NSIndexPath indexPathForRow:self.showDetailViewIndex inSection:0]];
+        [arr addObject:indexPath];
+        self.showDetailViewIndex = indexPath.row;
     }
-    
-    [arr addObject:indexPath];
-    
-    
-    if (self.selectIndex == indexPath.row) {
-        self.selectIndex = -1;
+
+    if (arr.count) {
+        [self beginUpdates];
+        [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationNone];
+        [self endUpdates];
     }
-    self.selectIndex = indexPath.row;
-    
-    //
-    [self reloadData];
-    
+
     if (self.m_delegate && [self.m_delegate respondsToSelector:@selector(didSelectAMAPPOI:)]) {
         [self.m_delegate didSelectAMAPPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row]];
     }

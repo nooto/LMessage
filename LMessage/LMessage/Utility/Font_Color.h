@@ -40,8 +40,9 @@
 //字体 - 链接性文字
 #define Color_Text_Link                ColorFromHex(0x41b5ff) //天蓝
 
-#define Color_9b9b9b                   ColorFromHex(0x9b9b9b) //天蓝
-
+#define Color_9b9b9b                   ColorFromHex(0x9b9b9b) //
+#define Color_5a5a5a                   ColorFromHex(0x5a5a5a) //
+#define Color_828282                   ColorFromHex(0x828282) //
 
 /*--------------------------------字体---------------------------------------*/
 //顶部导航字体

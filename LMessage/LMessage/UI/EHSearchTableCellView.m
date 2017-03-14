@@ -10,7 +10,7 @@
 #import "EHLocationDataManager.h"
 
 @interface EHSearchTableCellView()
-//@property (nonatomic, strong) MAMapView *mMapView;
+@property (nonatomic, strong) MAMapView *mMapView;
 @property (nonatomic, strong) UILabel *mNameLabel;
 @property (nonatomic, strong) UILabel *mDetailLabel;
 @property (nonatomic, strong) UIButton *mAddButtton;
@@ -18,6 +18,7 @@
 @property (nonatomic, assign) NSInteger  showType; //0: 收起  1：展开
 
 @property (nonatomic, assign) CGFloat  mCellHeight;
+@property (nonatomic, weak) AMapPOI *mapPOI;
 
 @end
 
@@ -28,6 +29,7 @@
         [self.contentView addSubview:self.mNameLabel];
         [self.contentView addSubview:self.mAddButtton];
         [self.contentView addSubview:self.mDetailLabel];
+        [self.contentView addSubview:self.mMapView];
     }
     return self;
 }
@@ -37,7 +39,7 @@
         _mNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W/2, MarginH(25))];
         _mNameLabel.font = Font15;
         [_mNameLabel setTextColor:Color_black_50];
-        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, self.mCellHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
+        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, CellTopHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
     }
     return _mNameLabel;
 }
@@ -47,7 +49,7 @@
         _mDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W/2, MarginH(20))];
         _mDetailLabel.font = Font13;
         [_mDetailLabel setTextColor:Color_black_30];
-        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, self.mCellHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
+        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, CellTopHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
     }
     return _mDetailLabel;
 }
@@ -59,18 +61,18 @@
         [_mAddButtton setImage:[UIImage imageNamed:@"ic_add_selected"] forState:UIControlStateDisabled];
         [_mAddButtton setImage:[UIImage imageNamed:@"ic_add"] forState:UIControlStateNormal];
         [_mAddButtton setImage:[UIImage imageNamed:@"ic_add"] forState:UIControlStateHighlighted];
-        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), self.mCellHeight/2);
+        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), CellTopHeight/2);
     }
     
     return _mAddButtton;
 }
 
-//-(MAMapView*)mMapView{
-//    if (!_mMapView) {
-//        _mMapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, self.mCellHeight, SCREEN_W, self.mCellHeight)];
-//    }
-//    return _mMapView;
-//}
+-(MAMapView*)mMapView{
+    if (!_mMapView) {
+        _mMapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, CellTopHeight, SCREEN_W, CellBottomHeight)];
+    }
+    return _mMapView;
+}
 
 -(void)addButtonAction:(UIButton*)sender{
     if (self.didSelectAddPOI) {
@@ -80,17 +82,36 @@
 
 -(void)loardMapPOI:(AMapPOI *)mapPOI showType:(NSInteger)type{
     self.mapPOI = mapPOI;
-//    [self.mMapView setCenterCoordinate:CLLocationCoordinate2DMake(mapPOI.location.latitude, mapPOI.location.longitude) animated:YES];
-//    self.mMapView.hidden = !type;
     [self.mNameLabel setText:mapPOI.name];
     [self.mDetailLabel setText:mapPOI.address];
 
         //
     if ([LocationDataManager containMLocationData:mapPOI]) {
         self.mAddButtton.enabled = NO;
+        self.isContained = YES;
     }
     else{
         self.mAddButtton.enabled = YES;
+        self.isContained = NO;
+    }
+
+    if (type == 0) {
+//        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, CellTopHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
+//
+//        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, CellTopHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
+//
+//        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), CellTopHeight/2);
+//
+        self.mMapView.hidden = YES;
+    }
+    else{
+//        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, CellTopHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
+//
+//        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, CellTopHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
+//
+//        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), CellTopHeight/2);
+//
+        self.mMapView.hidden = NO;
     }
 }
 

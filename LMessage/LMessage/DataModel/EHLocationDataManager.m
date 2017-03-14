@@ -61,21 +61,12 @@ __strong static EHLocationDataManager *shareInstance = nil;
 }
 
 -(BOOL)containMLocationData:(AMapPOI*)mapPOI{
-    CGFloat  gap = 5.0f;
     for (NSInteger i = 0 ; i < self.mLocationDatas.count; i ++) {
         EHLocationData *locationData = self.mLocationDatas[i];
-        CGFloat lognGap = fabs(mapPOI.location.longitude  - locationData.locationCoordinate.longitude);
-        CGFloat latitudeGap = fabs(mapPOI.location.latitude  - locationData.locationCoordinate.latitude);
-
-        NSLog(@"mapPOI: %f  %f  ", mapPOI.location.longitude , mapPOI.location.latitude );
-        NSLog(@"locationData: %f  %f  ", locationData.locationCoordinate.longitude, locationData.locationCoordinate.latitude);
-        NSLog(@"gap:  %f  %f  ", lognGap, latitudeGap);
-
-        if (lognGap <= gap && latitudeGap <= gap) {
+        if ([locationData isEqualToMapPoi:mapPOI]) {
             return YES;
         }
     }
-
     return NO;
 }
 

@@ -10,5 +10,7 @@
 #import "EHLocationData.h"
 #import "MGSwipeTableCell.h"
 @interface EHViewTableViewCell : MGSwipeTableCell
+@property (nonatomic, copy) void (^didLongPress)(EHLocationData* locationData);
+
 - (void)loardTableCellWithLocationData:(EHLocationData*)locationData curPostion:(CLLocationCoordinate2D)locationCoord;
 @end

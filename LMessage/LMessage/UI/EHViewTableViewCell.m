@@ -23,6 +23,9 @@
         [self.contentView addSubview:self.addressLabel];
         [self.contentView addSubview:self.distanceLabel];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLongPress:)];
+        [self addGestureRecognizer:longGesture];
     }
     return self;
 }
@@ -60,6 +63,13 @@
     return _distanceLabel;
 }
 
+-(void)btnLongPress:(UILongPressGestureRecognizer *)sender{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if (self.didLongPress) {
+            self.didLongPress(self.mLocationData);
+        }
+    }
+}
 - (void)loardTableCellWithLocationData:(EHLocationData*)locationData curPostion:(CLLocationCoordinate2D)locationCoord{
     self.mLocationData = locationData;
     [self.mNameLabel setText:locationData.locationName];

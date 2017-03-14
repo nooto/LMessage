@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, assign) CLLocationCoordinate2D locationCoordinate;
 - (id)initWithAMapPOI:(AMapPOI*)mapPOI;
+-(BOOL)isEqualToMapPoi:(AMapPOI*)mapPOI;
 @end

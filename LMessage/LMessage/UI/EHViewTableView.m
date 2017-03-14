@@ -9,6 +9,9 @@
 #import "EHViewTableView.h"
 #import "EHViewTableViewCell.h"
 #import "EHPromptView.h"
+#import "EHScSetDefendView.h"
+#import "EHCustomAlertView.h"
+
 #define CellIdentifier @"EHViewTableViewCell"
 @interface EHViewTableView() <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 @property (nonatomic, strong) NSMutableArray *mDataSoure;
@@ -60,6 +63,35 @@
     EHViewTableViewCell *cell = (EHViewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[EHViewTableViewCell description]];
     if (!cell) {
         cell = [[EHViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[EHViewTableViewCell description] height:[self tableView:tableView heightForRowAtIndexPath:indexPath]];
+
+
+        WS(weakSelf);
+        [cell setDidLongPress:^(EHLocationData *locationData) {
+                NSArray * arr  = [NSArray arrayWithObjects:@"删除地点",@"取消", nil];
+                EHScSetDefendView *view = [[EHScSetDefendView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) arr:arr];
+                if(arr.count > 0)[view setCellWithImage:[UIImage imageNamed:@"global_ic_close"] index:arr.count -1];
+                view.didSelectIndexWithText = ^(NSInteger index, NSString *indexText){
+                    if([indexText isEqualToString:@"删除地点"] ){
+                        EHCustomAlertView *alertView = [[EHCustomAlertView alloc] initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"要删除该地点吗？", nil) leftButton:@"不删除" rightButton:@"删除" selectActin:^(NSInteger index, NSString *buttonText) {
+                            if ([buttonText isEqualToString:@"删除"]) {
+                                if ([weakSelf.mDataSoure containsObject:locationData]) {
+                                    [LocationDataManager removeMLocationData:locationData];
+                                    NSInteger  index = [weakSelf.mDataSoure indexOfObject:locationData];
+                                    [weakSelf.mDataSoure removeObject:locationData];
+                                    [weakSelf beginUpdates];
+                                    [weakSelf deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+                                    [weakSelf endUpdates];
+                                }
+                            }
+
+                        }];
+
+                        alertView.rightButtonTitleColor = Color_Main;
+                        [alertView show];
+                    }
+                };
+                [view showModifyNamePageView];
+        }];
     }
     cell.delegate = self;
     cell.rightSwipeSettings.transition = MGSwipeTransitionBorder;
@@ -72,19 +104,21 @@
 -(NSArray*)swipeTableCell:(MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
             swipeSettings:(MGSwipeSettings*) swipeSettings expansionSettings:(MGSwipeExpansionSettings*) expansionSettings;
 {
-    swipeSettings.transition = MGSwipeTransitionBorder;
-    if (direction == MGSwipeDirectionRightToLeft){
-        MGSwipeButton * button1 = [MGSwipeButton buttonWithTitle:@"删除" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
-            DDLogInfo(@"Convenience callback received (right).");
-            return YES;
-        }];
-        [button1.titleLabel setFont:Font16];
-        [button1 setTitleColor:Color_white_100 forState:UIControlStateNormal];
-        [button1 setTitleColor:Color_white_50 forState:UIControlStateDisabled];
-        button1.backgroundColor = [UIColor grayColor];
-        return @[button1];
-    }
-    
+
+//    屏蔽侧滑 防止不断定位页面刷新不停
+//    swipeSettings.transition = MGSwipeTransitionBorder;
+//    if (direction == MGSwipeDirectionRightToLeft){
+//        MGSwipeButton * button1 = [MGSwipeButton buttonWithTitle:@"删除" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
+//            DDLogInfo(@"Convenience callback received (right).");
+//            return YES;
+//        }];
+//        [button1.titleLabel setFont:Font16];
+//        [button1 setTitleColor:Color_white_100 forState:UIControlStateNormal];
+//        [button1 setTitleColor:Color_white_50 forState:UIControlStateDisabled];
+//        button1.backgroundColor = [UIColor grayColor];
+//        return @[button1];
+//    }
+
     return nil;
 }
 
