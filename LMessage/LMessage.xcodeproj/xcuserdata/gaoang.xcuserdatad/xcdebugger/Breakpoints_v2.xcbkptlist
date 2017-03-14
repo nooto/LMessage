@@ -16,7 +16,7 @@
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "-animateTransition:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LMessage/UI/BaseUI/NavigationControllerDelegate.m"
-            timestampString = "482759086.096171"
+            timestampString = "511153273.884851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-navigationController:interactionControllerForAnimationController:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

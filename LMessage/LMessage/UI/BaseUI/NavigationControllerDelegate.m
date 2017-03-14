@@ -11,6 +11,7 @@
 @implementation NavigationControllerDelegate
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
     UIPanGestureRecognizer *anGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)];
     [self.navigationController.view addGestureRecognizer:anGesture];
 }

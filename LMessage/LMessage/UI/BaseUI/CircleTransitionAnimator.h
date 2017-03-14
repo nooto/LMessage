@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface CircleTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
+@interface CircleTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, CAAnimationDelegate>
 //weak?var?transitionContext:?UIViewControllerContextTransitioning?
 @property (nonatomic, weak)  id<UIViewControllerContextTransitioning> transitionContext;
 
