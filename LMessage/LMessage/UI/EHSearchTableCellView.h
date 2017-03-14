@@ -11,8 +11,9 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
 @interface EHSearchTableCellView : UITableViewCell
-@property (nonatomic, assign) NSInteger  showType; //0: 收起  1：展开
 @property (nonatomic, copy) void(^didSelectAddPOI)(AMapPOI*);
 @property (nonatomic, weak) AMapPOI *mapPOI;
+
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellHeight:(CGFloat)cellHeight;
 -(void)loardMapPOI:(AMapPOI *)mapPOI showType:(NSInteger)type;
 @end

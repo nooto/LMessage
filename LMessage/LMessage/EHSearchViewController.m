@@ -25,6 +25,8 @@
     [self.view addSubview:self.mTextField];
     [self.view addSubview:self.mTableView];
     self.automaticallyAdjustsScrollViewInsets = false;
+
+    [self.mTextField becomeFirstResponder];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -82,9 +84,9 @@
     [self.mTextField resignFirstResponder];
 }
 
-- (void)didSelectAddAMAPPOI:(AMapPOI *)mapPOI{
+- (void)didSelectAddAMAPPOI:(AMapPOI *)mapPOI indexPath:(NSIndexPath *)indexPath{
     [LocationDataManager addMLocationData:[[EHLocationData alloc] initWithAMapPOI:mapPOI]];
-//    [LocationDataManager saveLocationDatas];
+    [self.mTableView reloadTableViewWithIndexPath:indexPath];
 }
 
 -(UITextField*)mTextField{
@@ -95,6 +97,7 @@
         _mTextField.layer.borderWidth = 1.0f;
         _mTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_mTextField setPlaceholder:@"请输入内容。。。" WithColor:[UIColor grayColor]];
+        [_mTextField setKeyboardType:UIKeyboardTypeDefault];
         
         
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, CGRectGetHeight(_mTextField.frame))];
@@ -103,7 +106,7 @@
         
         UIButton *searchButton= [[UIButton alloc] initWithFrame:CGRectMake(0, 0, CGRectGetHeight(_mTextField.frame)-10, CGRectGetHeight(_mTextField.frame))];
         [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [searchButton setImage:[UIImage imageNamed:@"ic_search"] forState:UIControlStateNormal];
+        [searchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
         [_mTextField setRightView:searchButton];
         _mTextField.rightViewMode = UITextFieldViewModeAlways;
     }

@@ -13,6 +13,7 @@
 #import "MJRefresh.h"
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "EHMapViewController.h"
+
 @interface ViewController ()<MAMapViewDelegate, AMapLocationManagerDelegate>
 @property (nonatomic, strong) AMapLocationManager *mLocationManager;
 
@@ -24,24 +25,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H+20, NAVBAR_H - 20)];
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 60, 20, NAVBAR_H, NAVBAR_H - 20)];
     rightBtn.titleLabel.font = Font15;
-    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [rightBtn addTarget:self action:@selector(saveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [rightBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+
     [self addRightButton:rightBtn];
-    
-    
     [self hiddeBackButton];
 
-    UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H+20, NAVBAR_H - 20)];
-    seachBtn.center = CGPointMake(SCREEN_W/2, CGRectGetHeight(self.mNavBarView.frame)/2 + 20);
+    UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H + 40, NAVBAR_H - 30)];
+    seachBtn.center = CGPointMake(SCREEN_W/2, CGRectGetHeight(self.mNavBarView.frame)/2 + 10);
     seachBtn.titleLabel.font = Font15;
     [seachBtn setTitle:@"搜索" forState:UIControlStateNormal];
-    seachBtn.backgroundColor = [UIColor redColor];
-    seachBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [seachBtn setTitleColor:Color_black_30 forState:UIControlStateNormal];
+
+    seachBtn.layer.borderColor = Color_white_30.CGColor;
+    seachBtn.layer.borderWidth = 1.0f;
+    seachBtn.layer.cornerRadius = 10.0f;
     [seachBtn addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-//    [seachBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+
     [self.mNavBarView addSubview:seachBtn];
     
     [self.view addSubview:self.mTableView];

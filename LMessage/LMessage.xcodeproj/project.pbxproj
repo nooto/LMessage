@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20218F41E77C0F40032434F /* EHPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20218F31E77C0F40032434F /* EHPromptView.m */; };
 		E216B5731CFD31C7002FB0CC /* EHViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5721CFD31C7002FB0CC /* EHViewTableView.m */; };
 		E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */; };
 		E216B57A1CFD3480002FB0CC /* EHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5791CFD3480002FB0CC /* EHBaseObject.m */; };
@@ -110,6 +111,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20218F21E77C0F40032434F /* EHPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHPromptView.h; sourceTree = "<group>"; };
+		E20218F31E77C0F40032434F /* EHPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHPromptView.m; sourceTree = "<group>"; };
 		E216B5711CFD31C7002FB0CC /* EHViewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableView.h; sourceTree = "<group>"; };
 		E216B5721CFD31C7002FB0CC /* EHViewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHViewTableView.m; sourceTree = "<group>"; };
 		E216B5741CFD32FD002FB0CC /* EHViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableViewCell.h; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 		E2C61AA81D0E9CD100737203 /* customerUI */ = {
 			isa = PBXGroup;
 			children = (
+				E20218F21E77C0F40032434F /* EHPromptView.h */,
+				E20218F31E77C0F40032434F /* EHPromptView.m */,
 				E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */,
 				E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */,
 				E2C61AAB1D0E9CD100737203 /* MGSwipeTableCell.h */,
@@ -758,6 +763,7 @@
 				E27F56F41CC20E4700D44138 /* EHBaseViewController.m in Sources */,
 				E27F569D1CC20E2B00D44138 /* DDMultiFormatter.m in Sources */,
 				E280B7701D13DC3000807E0A /* MJRefreshHeaderView.m in Sources */,
+				E20218F41E77C0F40032434F /* EHPromptView.m in Sources */,
 				E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */,
 				E27F56991CC20E2B00D44138 /* DDLogFormatter.m in Sources */,
 				E27F56FE1CC20F9100D44138 /* HistoryViewController.m in Sources */,

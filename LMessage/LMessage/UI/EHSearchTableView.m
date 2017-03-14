@@ -23,7 +23,19 @@
     }
     return self;
 }
+- (void)reloadTableViewWithIndexPath:(NSIndexPath *)indexPath{
+    if (![indexPath isKindOfClass:[NSIndexPath class]]) {
+        return;
+    }
 
+    if ( indexPath.row >=0 && indexPath.row < [self.m_delegate seachTableViewSourceDatas].count) {
+        [self beginUpdates];
+        [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [self endUpdates];
+    }
+    
+}
+#pragma mark =
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    if (indexPath.row == self.selectIndex) {
 //        return MarginH(120);
@@ -41,13 +53,13 @@
     static NSString *indetifier  =@"EHSearchTableCellView";
     EHSearchTableCellView *cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
     if (!cell) {
-        cell = [[EHSearchTableCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
+        cell = [[EHSearchTableCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier cellHeight:[self tableView:tableView heightForRowAtIndexPath:indexPath]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         WS(weakSelf);
         [cell setDidSelectAddPOI:^(AMapPOI *mapPOI) {
-            if (weakSelf.m_delegate && [weakSelf.m_delegate respondsToSelector:@selector(didSelectAddAMAPPOI:)]) {
-                [weakSelf.m_delegate didSelectAddAMAPPOI:mapPOI];
+            if (weakSelf.m_delegate && [weakSelf.m_delegate respondsToSelector:@selector(didSelectAddAMAPPOI: indexPath:)]) {
+                [weakSelf.m_delegate didSelectAddAMAPPOI:mapPOI indexPath:indexPath];
             }
         }];
     }

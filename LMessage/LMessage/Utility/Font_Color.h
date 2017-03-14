@@ -39,6 +39,10 @@
 #define Color_Text_Alert               ColorFromHex(0xf15d3a) //红
 //字体 - 链接性文字
 #define Color_Text_Link                ColorFromHex(0x41b5ff) //天蓝
+
+#define Color_9b9b9b                   ColorFromHex(0x9b9b9b) //天蓝
+
+
 /*--------------------------------字体---------------------------------------*/
 //顶部导航字体
 #define Font_Navigation                     Font17

@@ -11,9 +11,10 @@
 @protocol EHSearchTableViewDelegate<NSObject>
 -(NSArray*)seachTableViewSourceDatas;
 - (void)didSelectAMAPPOI:(AMapPOI*)mapPOI;
-- (void)didSelectAddAMAPPOI:(AMapPOI*)mapPOI;
+- (void)didSelectAddAMAPPOI:(AMapPOI*)mapPOI indexPath:(NSIndexPath*)indexPath;
 @end
 
 @interface EHSearchTableView : UITableView
 -(id)initWithFrame:(CGRect)frame withDelegate:(id)delegate;
+- (void)reloadTableViewWithIndexPath:(NSIndexPath*)indexPath;
 @end

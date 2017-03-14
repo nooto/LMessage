@@ -15,6 +15,9 @@
 -(void)saveLocationDatas;
 -(void)addMLocationData:(EHLocationData*)locationData;
 -(void)removeMLocationData:(EHLocationData*)locationData;
+
+-(BOOL)containMLocationData:(AMapPOI*)mapPOI;
+
 @end
 
 #define LocationDataManager [EHLocationDataManager shareInstance]

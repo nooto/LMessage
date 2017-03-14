@@ -8,11 +8,14 @@
 
 #import "EHViewTableView.h"
 #import "EHViewTableViewCell.h"
+#import "EHPromptView.h"
 #define CellIdentifier @"EHViewTableViewCell"
 @interface EHViewTableView() <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 @property (nonatomic, strong) NSMutableArray *mDataSoure;
 @property (nonatomic, assign) CLLocationCoordinate2D mLocationCoordinate;
-//@property (nonatomic, strong) UIView
+
+
+@property (nonatomic, strong) EHPromptView *mPromptView;
 @end
 
 @implementation EHViewTableView
@@ -20,9 +23,25 @@
     if (self = [super initWithFrame:frame]) {
         self.delegate = self;
         self.dataSource = self;
+        [self addSubview:self.mPromptView];
     }
     return self;
 }
+
+- (EHPromptView*)mPromptView{
+    if (!_mPromptView) {
+        _mPromptView = [[EHPromptView alloc] initWithPromptString:NSLocalizedString(@"您还没添加任何地点...", @"您还没添加任何地点...") image:@"ic_empty" complete:^{
+        }];
+    }
+    return _mPromptView;
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    [self.mPromptView show:!self.mDataSoure.count];
+}
+
+
 - (void)updateViewWithCLLocationCoordinate:(CLLocationCoordinate2D)locationCoord{
     self.mLocationCoordinate = locationCoord;
     self.mDataSoure = nil;
@@ -55,14 +74,6 @@
 {
     swipeSettings.transition = MGSwipeTransitionBorder;
     if (direction == MGSwipeDirectionRightToLeft){
-//        MGSwipeButton * button = [MGSwipeButton buttonWithTitle:@"编辑" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
-//            DDLogInfo(@"Convenience callback received (right).");
-//            return YES;
-//        }];
-//        [button.titleLabel setFont:Font16];
-//        [button setTitleColor:Color_white_100 forState:UIControlStateNormal];
-//        [button setTitleColor:Color_white_50 forState:UIControlStateDisabled];
-        
         MGSwipeButton * button1 = [MGSwipeButton buttonWithTitle:@"删除" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * sender){
             DDLogInfo(@"Convenience callback received (right).");
             return YES;
