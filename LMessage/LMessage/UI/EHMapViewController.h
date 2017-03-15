@@ -7,6 +7,7 @@
 //
 
 #import "EHBaseViewController.h"
+#import "EHLocationDataManager.h"
 
 @interface EHMapViewController : EHBaseViewController
 

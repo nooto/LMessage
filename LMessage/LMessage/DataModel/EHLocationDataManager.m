@@ -70,6 +70,21 @@ __strong static EHLocationDataManager *shareInstance = nil;
     return NO;
 }
 
+-(NSArray*)createArrOfPointAnnotation{
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:1];
+    for (NSInteger i = 0; i < self.mLocationDatas.count; i ++) {
+        EHLocationData *locationData = self.mLocationDatas[i];
+
+        MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
+        pointAnnotation.title = locationData.locationName;
+        pointAnnotation.subtitle = locationData.address;
+        pointAnnotation.coordinate = locationData.locationCoordinate;
+       [arr addObject:pointAnnotation];
+    }
+
+    return arr;
+}
+
 -(NSMutableArray*)mLocationDatas{
     if (!_mLocationDatas) {
         _mLocationDatas = [[NSMutableArray alloc] initWithCapacity:1];

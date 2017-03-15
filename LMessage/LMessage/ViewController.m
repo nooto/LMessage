@@ -29,12 +29,15 @@
     rightBtn.titleLabel.font = Font15;
     [rightBtn addTarget:self action:@selector(saveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [rightBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
-
-    [self addRightButton:rightBtn];
+    [self.mNavBarView addSubview:rightBtn];
     [self hiddeBackButton];
 
-    UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 40 - 15 ,20, NAVBAR_H + 40, NAVBAR_H - 30)];
-    seachBtn.center = CGPointMake(SCREEN_W/2, CGRectGetHeight(self.mNavBarView.frame)/2 + 10);
+    UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(rightBtn.frame) + MarginH(20) ,
+                                                                    20,
+                                                                    SCREEN_W - 2 *(CGRectGetWidth(rightBtn.frame) + MarginH(20)),
+                                                                    NAVBAR_H - 30)];
+
+    seachBtn.center = CGPointMake(seachBtn.center.x, CGRectGetHeight(self.mNavBarView.frame)/2 + 10);
     seachBtn.titleLabel.font = Font15;
     [seachBtn setTitle:@"搜索" forState:UIControlStateNormal];
     [seachBtn setTitleColor:Color_black_30 forState:UIControlStateNormal];
@@ -77,6 +80,7 @@
 #pragma mark - 定位
 -(void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
     NSLog(@"定位成功！");
+    LocationDataManager.mLocation = location;
     [self.mTableView headerEndRefreshing];
     [self.mTableView updateViewWithCLLocationCoordinate:location.coordinate];
 }

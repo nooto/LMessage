@@ -43,10 +43,10 @@
 
 -(UILabel*)addressLabel{
     if (!_addressLabel) {
-        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(MarginH(20), 0, SCREEN_W/2, MarginH(25))];
+        _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(MarginH(20), 0, SCREEN_W - MarginH(40), MarginH(25))];
         _addressLabel.font = Font13;
         [_addressLabel setTextColor:Color_black_30];
-        _addressLabel.center = CGPointMake(_mNameLabel.center.x, self.cellHeight/2+CGRectGetHeight(_addressLabel.frame)/2);
+        _addressLabel.center = CGPointMake(_addressLabel.center.x, self.cellHeight/2+CGRectGetHeight(_addressLabel.frame)/2);
     }
     return _addressLabel;
 }
@@ -58,7 +58,7 @@
         _distanceLabel.textAlignment = NSTextAlignmentRight;
         _distanceLabel.font = Font13;
         [_distanceLabel setTextColor:Color_Main];
-        _distanceLabel.center = CGPointMake(_distanceLabel.center.x, self.cellHeight/2);
+        _distanceLabel.center = CGPointMake(_distanceLabel.center.x, self.mNameLabel.center.y);
     }
     return _distanceLabel;
 }
