@@ -5,6 +5,19 @@
 #import "EHSysProperty.h"
 
 /*--------------------------------2.0---------------------------------------*/
+
+
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define MB_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) \
+attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+#else
+#define MB_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode] : CGSizeZero;
+#endif
+
+
 /*--------------------------------主要颜色---------------------------------------*/
 //主色调
 #define Color_Main                          ColorFromHex(0xf8ab32)

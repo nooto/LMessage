@@ -7,7 +7,7 @@
 //
 
 #import "EHAnnotationView.h"
-
+#import "UILabel+AutoSize.h"
 @interface EHAnnotationView ()
 @property (nonatomic, strong) UILabel *mNameLabel;
 @end
@@ -15,8 +15,6 @@
 @implementation EHAnnotationView
 -(id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithAnnotation:nil reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor redColor];
-
         [self addSubview:self.mNameLabel];
     }
     return self;
@@ -24,21 +22,16 @@
 
 -(UILabel*)mNameLabel{
     if (!_mNameLabel) {
-        _mNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -20, 0, 25)];
+        _mNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -20, 140, 20)];
         [_mNameLabel setFont:Font13];
+        _mNameLabel.textAlignment = NSTextAlignmentCenter;
         [_mNameLabel setTextColor:Color_black_100];
     }
     return _mNameLabel;
 }
 
 -(void)layoutSubviews{
-    [_mNameLabel sizeToFit];
-    CGRect frame = _mNameLabel.frame;
-    if (frame.size.width > 100) {
-        frame.size.width = 100;
-    }
-    [_mNameLabel setFrame:frame];
-
+    [_mNameLabel sizeToFitForWidth];
     [_mNameLabel setCenter:CGPointMake(CGRectGetWidth(self.frame)/2, -CGRectGetHeight(_mNameLabel.frame)/2)];
     [super layoutSubviews];
 }

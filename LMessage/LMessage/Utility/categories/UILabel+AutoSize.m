@@ -7,7 +7,7 @@
 //
 
 #import "UILabel+AutoSize.h"
-
+#import <UIKit/UIKit.h>
 @interface UILabel ()
 
 @end
@@ -15,51 +15,67 @@
 @implementation UILabel (UILabel_AutoSize)
 
 
--(void)setTextWithAdjustWidth:(NSString*)text{
-    [self setText:text];
-    [self adjustLabelWidth];
-}
-
--(void)adjustLabelWidth{
-    if (self.text && self.font) {
-        CGSize testSize = [self.text sizeWithAttributes:@{NSFontAttributeName: self.font}];
-        CGRect frame = self.frame;
-        frame.size.width = testSize.width;
-        self.frame =frame;
-    }
-}
-
-
--(void)setTextWithAdjustHeight:(NSString*)text{
-    [self setText:text];
-    [self adjustLableForHeight];
-}
-
--(void)adjustLableForHeight{
-    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:self.font, NSFontAttributeName,nil];
-    CGSize testSize = [self.text sizeWithAttributes:dic];
-    NSInteger line =  testSize.width / CGRectGetWidth(self.frame) + 1;
-    self.numberOfLines = line;
-    CGRect frame = self.frame;
-//    frame.size.height = line * testSize.height;
-    self.frame =frame;
-}
-
--(void)sizeToFitWithText:(NSString*)text MaxWidth:(CGFloat)maxWidth{
-    [self setText:text];
-    [self sizeToFitWithMaxWidth:maxWidth];
+- (void)sizeToFitForWidth{
+    [self sizeToFitWithMaxWidth:CGRectGetWidth(self.frame)];
 }
 
 -(void)sizeToFitWithMaxWidth:(CGFloat)maxWidth{
-    [self sizeToFit];
-    if (CGRectGetWidth(self.frame) > maxWidth) {
-        CGRect frame = self.frame;
-        frame.size.width = maxWidth;
-        if (self.textAlignment == NSTextAlignmentRight) {
-            frame.origin.x = frame.origin.x + maxWidth - frame.size.width;
-        }
-        [self setFrame:frame];
+    CGRect frame = self.frame;
+    self.numberOfLines = 0;//多行显示，计算高度
+    CGSize titleSize = [self.text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+
+    frame.size.height = titleSize.height;
+    [self setFrame:frame];
+}
+
+
+- (void)sizeToFitForHeight{
+    [self sizeToFitWithMaxHeight:CGRectGetHeight(self.frame)];
+}
+
+- (void)sizeToFitWithMaxHeight:(CGFloat)maxHeight{
+    CGRect frame = self.frame;
+    self.numberOfLines = 0;//多行显示，计算高度
+    CGSize titleSize = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, maxHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+    frame.size.height = titleSize.height;
+    [self setFrame:frame];
+}
+
+
+- (NSMutableAttributedString *)setTextColorWithStr:(NSString *)str Color:(UIColor *)color Range:(NSRange)range{
+
+    if (str == nil) return nil;
+
+    NSMutableAttributedString *newStr = [[NSMutableAttributedString alloc] initWithString:str];
+
+    [newStr addAttribute:NSForegroundColorAttributeName value:color range:range];
+
+    return newStr;
+
+}
+
+- (NSMutableAttributedString *)setTextFontWithStr:(NSString *)str Font:(UIFont *)font Range:(NSRange)range{
+
+    if (str == nil) return nil;
+
+    NSMutableAttributedString *newStr = [[NSMutableAttributedString alloc] initWithString:str];
+
+    [newStr addAttribute:NSFontAttributeName value:font range:range];
+
+    return newStr;
+
+}
+
+-(void)adjustLabelHeightForAttributedText{
+    if (self.attributedText) {
+            //消息内容frame
+        CGSize maxSize = CGSizeMake(self.frame.size.width/2, MAXFLOAT);
+            //设定attributedString的字体及大小，一定要设置这个，否则计算出来的height是非常不准确的
+        CGRect contentRect = [self.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+        [self setFrame:contentRect];
     }
+    
+    
 }
 
 @end

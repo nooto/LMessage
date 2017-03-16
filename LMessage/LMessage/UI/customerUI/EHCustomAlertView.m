@@ -94,7 +94,7 @@
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [titleLabel setText:message];
-        [titleLabel adjustLabelHeight];
+        [titleLabel sizeToFitForHeight];
         [self.mContentView addSubview:titleLabel];
         self.mMessageLabel = titleLabel;
         [self checkeMessageHieht];
@@ -172,7 +172,7 @@
     UIFont *font = self.mMessageLabel.font;
     [self.mMessageLabel setText:[sttributedMessage string]];
     [self.mMessageLabel setFont:[UIFont systemFontOfSize:20]];
-    [self.mMessageLabel adjustLabelHeight];
+    [self.mMessageLabel sizeToFitForHeight];
 //    self.mMessageLabel.backgroundColor = [UIColor grayColor];
     [self setMessageFont:[UIFont systemFontOfSize:20]];
     [self.mMessageLabel setFont:font];
@@ -234,7 +234,7 @@
 -(void)setMessageFont:(UIFont *)messageFont{
     _messageFont = messageFont;
     [self.mMessageLabel setFont:messageFont];
-    [self.mMessageLabel adjustLabelHeight];
+    [self.mMessageLabel sizeToFitForHeight];
     [self checkeMessageHieht];
     
     //按钮。。

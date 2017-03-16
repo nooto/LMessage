@@ -22,7 +22,8 @@
     [super viewDidLoad];
     [self.view addSubview:self.mMapView];
     [self.mMapView setCenterCoordinate:LocationDataManager.mLocation.coordinate animated:YES];
-    [self.mMapView addAnnotations:[LocationDataManager createArrOfPointAnnotation]];
+//    [self.mMapView addAnnotations:[LocationDataManager createArrOfPointAnnotation]];
+    [self.mMapView addAnnotation:[LocationDataManager createArrOfPointAnnotation].firstObject];
 //    [self.mMapView selectAnnotation:self.mMapView.annotations.firstObject animated:YES];
 }
 

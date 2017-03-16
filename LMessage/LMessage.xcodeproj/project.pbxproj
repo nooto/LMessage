@@ -10,7 +10,6 @@
 		E20218F41E77C0F40032434F /* EHPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20218F31E77C0F40032434F /* EHPromptView.m */; };
 		E20218F71E78181B0032434F /* EHScSetDefendView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20218F61E78181B0032434F /* EHScSetDefendView.m */; };
 		E20218FA1E7819230032434F /* EHCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20218F91E7819230032434F /* EHCustomAlertView.m */; };
-		E20218FD1E78199E0032434F /* UILabel+AutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = E20218FC1E78199E0032434F /* UILabel+AutoSize.m */; };
 		E216B5731CFD31C7002FB0CC /* EHViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5721CFD31C7002FB0CC /* EHViewTableView.m */; };
 		E216B5761CFD32FD002FB0CC /* EHViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5751CFD32FD002FB0CC /* EHViewTableViewCell.m */; };
 		E216B57A1CFD3480002FB0CC /* EHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E216B5791CFD3480002FB0CC /* EHBaseObject.m */; };
@@ -122,8 +121,6 @@
 		E20218F61E78181B0032434F /* EHScSetDefendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHScSetDefendView.m; sourceTree = "<group>"; };
 		E20218F81E7819230032434F /* EHCustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHCustomAlertView.h; sourceTree = "<group>"; };
 		E20218F91E7819230032434F /* EHCustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHCustomAlertView.m; sourceTree = "<group>"; };
-		E20218FB1E78199E0032434F /* UILabel+AutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoSize.h"; sourceTree = "<group>"; };
-		E20218FC1E78199E0032434F /* UILabel+AutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoSize.m"; sourceTree = "<group>"; };
 		E216B5711CFD31C7002FB0CC /* EHViewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableView.h; sourceTree = "<group>"; };
 		E216B5721CFD31C7002FB0CC /* EHViewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHViewTableView.m; sourceTree = "<group>"; };
 		E216B5741CFD32FD002FB0CC /* EHViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHViewTableViewCell.h; sourceTree = "<group>"; };
@@ -638,8 +635,6 @@
 		E2C61AA81D0E9CD100737203 /* customerUI */ = {
 			isa = PBXGroup;
 			children = (
-				E20218FB1E78199E0032434F /* UILabel+AutoSize.h */,
-				E20218FC1E78199E0032434F /* UILabel+AutoSize.m */,
 				E20218F81E7819230032434F /* EHCustomAlertView.h */,
 				E20218F91E7819230032434F /* EHCustomAlertView.m */,
 				E20218F51E78181B0032434F /* EHScSetDefendView.h */,
@@ -796,7 +791,6 @@
 				E27F56F61CC20E4700D44138 /* EHNavButton.m in Sources */,
 				E280B76D1D13DC3000807E0A /* MJRefreshBaseView.m in Sources */,
 				E27F56DF1CC20E3B00D44138 /* EHSysProperty.m in Sources */,
-				E20218FD1E78199E0032434F /* UILabel+AutoSize.m in Sources */,
 				E20218FA1E7819230032434F /* EHCustomAlertView.m in Sources */,
 				E280B7571D12872200807E0A /* EHSearchTableView.m in Sources */,
 				E27F56D81CC20E3B00D44138 /* NSString+hex.m in Sources */,
