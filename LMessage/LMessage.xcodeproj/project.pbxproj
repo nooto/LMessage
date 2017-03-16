@@ -93,7 +93,6 @@
 		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
 		E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */; };
 		E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */; };
-		E2EACA6D1E7A2F1C00C8C871 /* Shenzhen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E2EACA6C1E7A2F1C00C8C871 /* Shenzhen.gpx */; };
 		E2EACA701E7A300C00C8C871 /* EHAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EACA6F1E7A300C00C8C871 /* EHAnnotationView.m */; };
 /* End PBXBuildFile section */
 
@@ -278,7 +277,6 @@
 		E2C61AAB1D0E9CD100737203 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
 		E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		E2EACA6B1E7A2ECA00C8C871 /* Shenzhen.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Shenzhen.gpx; sourceTree = "<group>"; };
-		E2EACA6C1E7A2F1C00C8C871 /* Shenzhen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Shenzhen.gpx; path = LMessage/Shenzhen.gpx; sourceTree = "<group>"; };
 		E2EACA6E1E7A300C00C8C871 /* EHAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHAnnotationView.h; sourceTree = "<group>"; };
 		E2EACA6F1E7A300C00C8C871 /* EHAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -352,7 +350,6 @@
 		E2528E771C9FF36C0015180D = {
 			isa = PBXGroup;
 			children = (
-				E2EACA6C1E7A2F1C00C8C871 /* Shenzhen.gpx */,
 				E216B59F1CFF175E002FB0CC /* libc++.tbd */,
 				E2528E821C9FF36C0015180D /* LMessage */,
 				E2528E9C1C9FF36C0015180D /* LMessageTests */,
@@ -386,7 +383,6 @@
 				E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */,
 				E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */,
 				E27F56FC1CC20F9100D44138 /* HistoryViewController.h */,
-				E2EACA6B1E7A2ECA00C8C871 /* Shenzhen.gpx */,
 				E27F56FD1CC20F9100D44138 /* HistoryViewController.m */,
 				E2528E8F1C9FF36C0015180D /* Assets.xcassets */,
 				E2528E911C9FF36C0015180D /* LaunchScreen.storyboard */,
@@ -412,6 +408,7 @@
 				E216B5851CFF1435002FB0CC /* Foundation.framework */,
 				E216B5831CFF142D002FB0CC /* UIKit.framework */,
 				E2528E841C9FF36C0015180D /* main.m */,
+				E2EACA6B1E7A2ECA00C8C871 /* Shenzhen.gpx */,
 				E2528F0E1C9FF6550015180D /* LMessage.pch */,
 			);
 			name = "Supporting Files";
@@ -754,7 +751,6 @@
 			files = (
 				E2528E901C9FF36C0015180D /* Assets.xcassets in Resources */,
 				E216B59C1CFF1575002FB0CC /* AMap.bundle in Resources */,
-				E2EACA6D1E7A2F1C00C8C871 /* Shenzhen.gpx in Resources */,
 				E280B76C1D13DC3000807E0A /* MJRefresh.bundle in Resources */,
 				E27F569E1CC20E2B00D44138 /* README.txt in Resources */,
 			);

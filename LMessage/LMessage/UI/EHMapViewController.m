@@ -20,6 +20,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [self setTitle:@"地图查看"];
     [self.view addSubview:self.mMapView];
     [self.mMapView setCenterCoordinate:LocationDataManager.mLocation.coordinate animated:YES];
 //    [self.mMapView addAnnotations:[LocationDataManager createArrOfPointAnnotation]];
