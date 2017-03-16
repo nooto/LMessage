@@ -19,8 +19,8 @@
         self.locationName = [aDecoder decodeObjectForKey:STR_locationName];
         self.address = [aDecoder decodeObjectForKey:STR_address];
         
-        CLLocationDegrees  latitude = [[aDecoder decodeObjectForKey:@""] doubleValue];
-        CLLocationDegrees  longitude = [[aDecoder decodeObjectForKey:@""] doubleValue];
+        CLLocationDegrees  latitude = [[aDecoder decodeObjectForKey:STR_latitude] doubleValue];
+        CLLocationDegrees  longitude = [[aDecoder decodeObjectForKey:STR_longitude] doubleValue];
         self.locationCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
     }
     return self;

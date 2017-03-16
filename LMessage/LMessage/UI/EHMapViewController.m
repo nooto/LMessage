@@ -10,6 +10,7 @@
 #import <MAMapKit/MAMapKit.h>
 #import <MAMapKit/MAAnnotation.h>
 #import <MAMapKit/MAPointAnnotation.h>
+#import "EHAnnotationView.h"
 
 @interface EHMapViewController() <MAMapViewDelegate>
 @property (nonatomic, strong) MAMapView *mMapView;
@@ -26,14 +27,14 @@
 }
 
 - (MAAnnotationView*)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
-    NSString * pinReusableIdentifier = @"fadsfsdfasdfasdfasf";
-
-    MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:pinReusableIdentifier];
+    NSString * reusableIdentifier = @"EHAnnotationView";
+    EHAnnotationView *annotationView = (EHAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:reusableIdentifier];
     if (!annotationView) {
-        annotationView = [[MAAnnotationView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        annotationView = [[EHAnnotationView alloc] initWithFrame:CGRectMake(0, 0, 100, 150) reuseIdentifier:reusableIdentifier];
     }
-    annotationView.image = [UIImage imageNamed:@"ic_add_selected"];
-    
+    if ([annotation isKindOfClass:[MAPointAnnotation class]]) {
+        [annotationView setAnnotion:(MAPointAnnotation*)annotation];
+    }
     return annotationView;
 }
 - (void)mapView:(MAMapView *)mapView mapWillZoomByUser:(BOOL)wasUserAction{
