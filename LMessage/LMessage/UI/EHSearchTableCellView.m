@@ -9,29 +9,19 @@
 #import "EHSearchTableCellView.h"
 #import "EHLocationDataManager.h"
 
-@interface EHSearchTableCellView()
-@property (nonatomic, strong) MAMapView *mMapView;
-@property (nonatomic, strong) UILabel *mNameLabel;
-@property (nonatomic, strong) UILabel *mDetailLabel;
-@property (nonatomic, strong) UIButton *mAddButtton;
-
-@property (nonatomic, assign) NSInteger  showType; //0: 收起  1：展开
-
-@property (nonatomic, assign) CGFloat  mCellHeight;
-@property (nonatomic, weak) AMapPOI *mapPOI;
-
-@end
-
 @implementation EHSearchTableCellView
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellHeight:(CGFloat)cellHeight{
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.mCellHeight = cellHeight;
-        [self.contentView addSubview:self.mNameLabel];
-        [self.contentView addSubview:self.mAddButtton];
-        [self.contentView addSubview:self.mDetailLabel];
-        [self.contentView addSubview:self.mMapView];
+		[self setupview];
     }
     return self;
+}
+
+
+-(void)setupview{
+	[self.contentView addSubview:self.mNameLabel];
+	[self.contentView addSubview:self.mAddButtton];
+	[self.contentView addSubview:self.mDetailLabel];
 }
 
 -(UILabel*)mNameLabel{
@@ -67,21 +57,14 @@
     return _mAddButtton;
 }
 
--(MAMapView*)mMapView{
-    if (!_mMapView) {
-        _mMapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, CellTopHeight, SCREEN_W, CellBottomHeight)];
-    }
-    return _mMapView;
-}
-
 -(void)addButtonAction:(UIButton*)sender{
     if (self.didSelectAddPOI) {
         self.didSelectAddPOI(self.mapPOI);
     }
 }
 
--(void)loardMapPOI:(AMapPOI *)mapPOI showType:(NSInteger)type{
-    self.mapPOI = mapPOI;
+-(void)setMapPOI:(AMapPOI *)mapPOI{
+    _mapPOI = mapPOI;
     [self.mNameLabel setText:mapPOI.name];
     [self.mDetailLabel setText:mapPOI.address];
 
@@ -93,25 +76,6 @@
     else{
         self.mAddButtton.enabled = YES;
         self.isContained = NO;
-    }
-
-    if (type == 0) {
-//        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, CellTopHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
-//
-//        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, CellTopHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
-//
-//        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), CellTopHeight/2);
-//
-        self.mMapView.hidden = YES;
-    }
-    else{
-//        _mNameLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mNameLabel.frame)/2, CellTopHeight/2 - CGRectGetHeight(_mNameLabel.frame)/2);
-//
-//        _mDetailLabel.center = CGPointMake(MarginH(20) + CGRectGetWidth(_mDetailLabel.frame)/2, CellTopHeight/2 + CGRectGetHeight(_mDetailLabel.frame)/2);
-//
-//        _mAddButtton.center = CGPointMake(SCREEN_W - CGRectGetWidth(_mAddButtton.frame), CellTopHeight/2);
-//
-        self.mMapView.hidden = NO;
     }
 }
 

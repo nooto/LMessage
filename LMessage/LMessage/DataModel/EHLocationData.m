@@ -47,7 +47,7 @@
 }
 
 -(BOOL)isEqualToMapPoi:(AMapPOI*)mapPOI{
-    CGFloat  gap = 5.0f;
+//    CGFloat  gap = 5.0f;
     CGFloat lognGap = fabs(mapPOI.location.longitude  - self.locationCoordinate.longitude);
     CGFloat latitudeGap = fabs(mapPOI.location.latitude  - self.locationCoordinate.latitude);
 
@@ -62,12 +62,12 @@
     NSLog(@"gap:  ---------%f ------ %f  ", lognGap, latitudeGap);
 
     if ([self.locationName isEqualToString:mapPOI.name]) {
-        if ([self.address isEqualToString:mapPOI.address]) {
-            if (lognGap <= gap && latitudeGap <= gap) {
-                return YES;
-            }
+//        if ([self.address isEqualToString:mapPOI.address]) {
+//            if (lognGap <= gap && latitudeGap <= gap) {
+//                return YES;
+//            }
             return YES;
-        }
+//        }
     }
 
     return NO;

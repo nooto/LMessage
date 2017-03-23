@@ -91,6 +91,7 @@
 		E280B7731D13DC3000807E0A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B76B1D13DC3000807E0A /* UIView+Extension.m */; };
 		E280B7761D17A1AD00807E0A /* EHMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E280B7751D17A1AD00807E0A /* EHMapViewController.m */; };
 		E29EB4731CF8724F00EF94C9 /* EHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */; };
+		E2A9A8A51E83B5D700798ED7 /* EHSearchTableSelectedCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9A8A41E83B5D700798ED7 /* EHSearchTableSelectedCellView.m */; };
 		E2C61AAD1D0E9CD100737203 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */; };
 		E2C61AAE1D0E9CD100737203 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C61AAC1D0E9CD100737203 /* MGSwipeTableCell.m */; };
 		E2EACA701E7A300C00C8C871 /* EHAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EACA6F1E7A300C00C8C871 /* EHAnnotationView.m */; };
@@ -272,6 +273,8 @@
 		E280B7751D17A1AD00807E0A /* EHMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMapViewController.m; sourceTree = "<group>"; };
 		E29EB4711CF8724F00EF94C9 /* EHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchViewController.h; sourceTree = "<group>"; };
 		E29EB4721CF8724F00EF94C9 /* EHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchViewController.m; sourceTree = "<group>"; };
+		E2A9A8A31E83B5D600798ED7 /* EHSearchTableSelectedCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSearchTableSelectedCellView.h; sourceTree = "<group>"; };
+		E2A9A8A41E83B5D700798ED7 /* EHSearchTableSelectedCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSearchTableSelectedCellView.m; sourceTree = "<group>"; };
 		E2C61AA91D0E9CD100737203 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		E2C61AAA1D0E9CD100737203 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		E2C61AAB1D0E9CD100737203 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -579,6 +582,8 @@
 				E280B7561D12872200807E0A /* EHSearchTableView.m */,
 				E280B7581D12875400807E0A /* EHSearchTableCellView.h */,
 				E280B7591D12875400807E0A /* EHSearchTableCellView.m */,
+				E2A9A8A31E83B5D600798ED7 /* EHSearchTableSelectedCellView.h */,
+				E2A9A8A41E83B5D700798ED7 /* EHSearchTableSelectedCellView.m */,
 				E280B7741D17A1AD00807E0A /* EHMapViewController.h */,
 				E280B7751D17A1AD00807E0A /* EHMapViewController.m */,
 				E2EACA6E1E7A300C00C8C871 /* EHAnnotationView.h */,
@@ -840,6 +845,7 @@
 				E27F56DE1CC20E3B00D44138 /* UIView+Frame.m in Sources */,
 				E271C8021D06B17800DE17B3 /* EHLocationDataManager.m in Sources */,
 				E2528E851C9FF36C0015180D /* main.m in Sources */,
+				E2A9A8A51E83B5D700798ED7 /* EHSearchTableSelectedCellView.m in Sources */,
 				E27F56DA1CC20E3B00D44138 /* NSTimer+HCTTimerHelp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

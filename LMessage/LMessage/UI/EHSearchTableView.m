@@ -8,6 +8,9 @@
 
 #import "EHSearchTableView.h"
 #import "EHSearchTableCellView.h"
+#import "EHSearchTableSelectedCellView.h"
+
+
 @interface EHSearchTableView() <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) id<EHSearchTableViewDelegate> m_delegate;
 @property (nonatomic, assign) NSInteger  showDetailViewIndex;
@@ -50,32 +53,37 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *indetifier  =@"EHSearchTableCellView";
-    EHSearchTableCellView *cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
-    if (!cell) {
-        cell = [[EHSearchTableCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier cellHeight:[self tableView:tableView heightForRowAtIndexPath:indexPath]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-        WS(weakSelf);
-        [cell setDidSelectAddPOI:^(AMapPOI *mapPOI) {
-            if (weakSelf.m_delegate && [weakSelf.m_delegate respondsToSelector:@selector(didSelectAddAMAPPOI: indexPath:)]) {
-                [weakSelf.m_delegate didSelectAddAMAPPOI:mapPOI indexPath:indexPath];
-            }
-        }];
-    }
-    [cell loardMapPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row]
-             showType: self.showDetailViewIndex == indexPath.row ? 1: 0];
-    return cell;
+	NSString *indetifier = nil;
+	EHSearchTableCellView *cell = nil;
+
+	if (indexPath.row == self.showDetailViewIndex) {
+		indetifier  =@"EHSearchTableSelectedCellView";
+		cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
+		if (![cell isKindOfClass:[EHSearchTableSelectedCellView class]]) {
+			cell = [[EHSearchTableSelectedCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
+		}
+	}
+	else{
+		indetifier  =@"EHSearchTableCellView";
+		cell = [tableView dequeueReusableCellWithIdentifier:indetifier];
+		if (![cell isKindOfClass:[EHSearchTableCellView class]]) {
+			cell = [[EHSearchTableCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetifier];
+		}
+	}
+
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	WS(weakSelf);
+	[cell setDidSelectAddPOI:^(AMapPOI *mapPOI) {
+		if (weakSelf.m_delegate && [weakSelf.m_delegate respondsToSelector:@selector(didSelectAddAMAPPOI: indexPath:)]) {
+			[weakSelf.m_delegate didSelectAddAMAPPOI:mapPOI indexPath:indexPath];
+		}
+	}];
+	[cell setMapPOI:[[self.m_delegate seachTableViewSourceDatas] objectAtIndex:indexPath.row]];
+	return cell;
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    EHSearchTableCellView *cellView = [tableView cellForRowAtIndexPath:indexPath];
-//    if ([cellView isKindOfClass:[EHSearchTableCellView class]]) {
-//        if (cellView.isContained) {
-//            return;
-//        }
-//    }
-
     NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:2];
     if (self.showDetailViewIndex < 0) {
         [arr addObject:indexPath];
@@ -86,14 +94,20 @@
         self.showDetailViewIndex = -1;
     }
     else{
-        [arr addObject:[NSIndexPath indexPathForRow:self.showDetailViewIndex inSection:0]];
-        [arr addObject:indexPath];
+		if (self.showDetailViewIndex < indexPath.row) {
+			[arr addObject:indexPath];
+			[arr addObject:[NSIndexPath indexPathForRow:self.showDetailViewIndex inSection:0]];
+		}
+		else{
+			[arr addObject:[NSIndexPath indexPathForRow:self.showDetailViewIndex inSection:0]];
+			[arr addObject:indexPath];
+		}
         self.showDetailViewIndex = indexPath.row;
     }
 
     if (arr.count) {
         [self beginUpdates];
-        [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationNone];
+        [self reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationFade];
         [self endUpdates];
     }
 
