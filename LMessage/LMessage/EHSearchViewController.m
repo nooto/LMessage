@@ -64,6 +64,7 @@
     
     [self.mSourceDatas removeAllObjects];
     [self.mSourceDatas addObjectsFromArray:response.pois];
+	self.mTableView.showDetailViewIndex = -1;
     [self.mTableView reloadData];
 }
 

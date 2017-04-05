@@ -23,7 +23,10 @@
 
 @implementation EHViewTableView
 -(id)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
+
+		self.separatorStyle = UITableViewCellSelectionStyleNone;
+//		self.tableHeaderView = [UIView alloc];
         self.delegate = self;
         self.dataSource = self;
         [self addSubview:self.mPromptView];
@@ -51,6 +54,13 @@
     [self reloadData];
 }
 #pragma mark - 列表类。。。
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+	return 0.01f;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+	return nil;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.mDataSoure.count;
 }

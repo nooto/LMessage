@@ -24,6 +24,10 @@
         [self.contentView addSubview:self.distanceLabel];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
+		UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, cellHeight - 0.5f, SCREEN_W, 0.5f)];
+		lineView.backgroundColor = Color_line;
+		[self.contentView addSubview:lineView];
+
         UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLongPress:)];
         [self addGestureRecognizer:longGesture];
     }

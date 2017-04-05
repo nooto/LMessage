@@ -15,6 +15,7 @@
 @end
 
 @interface EHSearchTableView : UITableView
+@property (nonatomic, assign) NSInteger  showDetailViewIndex;
 -(id)initWithFrame:(CGRect)frame withDelegate:(id)delegate;
 - (void)reloadTableViewWithIndexPath:(NSIndexPath*)indexPath;
 @end

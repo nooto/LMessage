@@ -25,7 +25,8 @@
         _mNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -20, 140, 20)];
         [_mNameLabel setFont:Font13];
         _mNameLabel.textAlignment = NSTextAlignmentCenter;
-        [_mNameLabel setTextColor:Color_black_100];
+        [_mNameLabel setTextColor:Color_white_80];
+		_mNameLabel.backgroundColor = Color_black_50;
     }
     return _mNameLabel;
 }
@@ -33,6 +34,7 @@
 -(void)layoutSubviews{
     [_mNameLabel sizeToFitForWidth];
     [_mNameLabel setCenter:CGPointMake(CGRectGetWidth(self.frame)/2, -CGRectGetHeight(_mNameLabel.frame)/2)];
+	_mNameLabel.layer.cornerRadius = 15.0f;
     [super layoutSubviews];
 }
 
@@ -40,7 +42,7 @@
     _annotion = annotion;
     NSLog(@"%f %f", annotion.coordinate.latitude, annotion.coordinate.longitude);
     self.image = [UIImage imageNamed:@"ic_add"];
-    [self.mNameLabel setText:annotion.subtitle];
+	[self.mNameLabel setText:annotion.title];
 }
 
 @end

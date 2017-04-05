@@ -13,7 +13,7 @@
 
 @interface EHSearchTableView() <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, assign) id<EHSearchTableViewDelegate> m_delegate;
-@property (nonatomic, assign) NSInteger  showDetailViewIndex;
+//@property (nonatomic, assign) NSInteger  showDetailViewIndex;
 @end
 
 @implementation EHSearchTableView
