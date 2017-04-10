@@ -19,6 +19,7 @@
 @implementation EHSearchTableView
 -(id)initWithFrame:(CGRect)frame withDelegate:(id)delegate{
     if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
+		self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         self.showDetailViewIndex = -1;
         self.m_delegate = delegate;

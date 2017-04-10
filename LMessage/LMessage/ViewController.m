@@ -25,16 +25,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 60, 20, NAVBAR_H, NAVBAR_H - 20)];
+	CGFloat scale = 1.0f;
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 19*scale - 20, 20, (19*scale), (25*scale))];
     rightBtn.titleLabel.font = Font15;
     [rightBtn addTarget:self action:@selector(saveButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [rightBtn setImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+    [rightBtn setBackgroundImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+	rightBtn.center = CGPointMake(rightBtn.center.x, NAVBAR_H/2 + 10);
     [self.mNavBarView addSubview:rightBtn];
     [self hiddeBackButton];
 
     UIButton *seachBtn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(rightBtn.frame) + MarginH(20) ,
                                                                     20,
-                                                                    SCREEN_W - 2 *(CGRectGetWidth(rightBtn.frame) + MarginH(20)),
+                                                                    CGRectGetMinX(rightBtn.frame)  - (CGRectGetWidth(rightBtn.frame) + MarginH(40)),
                                                                     NAVBAR_H - 30)];
 
     seachBtn.center = CGPointMake(seachBtn.center.x, CGRectGetHeight(self.mNavBarView.frame)/2 + 10);

@@ -9,6 +9,9 @@
 #import "EHSearchTableCellView.h"
 #import "EHLocationDataManager.h"
 
+@interface EHSearchTableCellView ()
+@property (nonatomic, strong) UIView *mLineView;
+@end
 @implementation EHSearchTableCellView
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -22,6 +25,7 @@
 	[self.contentView addSubview:self.mNameLabel];
 	[self.contentView addSubview:self.mAddButtton];
 	[self.contentView addSubview:self.mDetailLabel];
+	[self.contentView addSubview:self.mLineView];
 }
 
 -(UILabel*)mNameLabel{
@@ -55,6 +59,18 @@
     }
     
     return _mAddButtton;
+}
+-(UIView*)mLineView{
+	if (!_mLineView) {
+		_mLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 0.5f)];
+		_mLineView.backgroundColor = Color_Line;
+	}
+	return _mLineView;
+}
+
+-(void)layoutSubviews{
+	[super layoutSubviews];
+	[self.mLineView setFrame:CGRectMake(0, CGRectGetHeight(self.bounds) -0.5f, SCREEN_W, 0.5f)];
 }
 
 -(void)addButtonAction:(UIButton*)sender{
