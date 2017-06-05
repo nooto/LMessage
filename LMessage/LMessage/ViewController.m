@@ -13,7 +13,7 @@
 #import "MJRefresh.h"
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "EHMapViewController.h"
-
+#import <AMapFoundationKit/AMapFoundationKit.h>
 @interface ViewController ()<MAMapViewDelegate, AMapLocationManagerDelegate>
 @property (nonatomic, strong) AMapLocationManager *mLocationManager;
 
@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[AMapServices sharedServices].apiKey = @"3536b6d61aa6623f50c7f40eb393e281";
+
     // Do any additional setup after loading the view, typically from a nib.
 	CGFloat scale = 1.0f;
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 19*scale - 20, 20, (19*scale), (25*scale))];
@@ -91,7 +93,6 @@
     NSLog(@"定位失败！");
     [self.mTableView headerEndRefreshing];
 }
-
 
 -(EHViewTableView*)mTableView{
     if (!_mTableView) {

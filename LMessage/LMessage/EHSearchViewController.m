@@ -27,6 +27,8 @@
     self.automaticallyAdjustsScrollViewInsets = false;
 
     [self.mTextField becomeFirstResponder];
+
+	self.mAroundRequest.location = [AMapGeoPoint locationWithLatitude:LocationDataManager.mLocation.coordinate.latitude longitude:LocationDataManager.mLocation.coordinate.longitude];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

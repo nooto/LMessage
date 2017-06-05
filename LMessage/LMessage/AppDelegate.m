@@ -18,8 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    [AMapServices sharedServices].apiKey = @"889cd97ed29db9241875f5b28c5b4116";
+    [AMapServices sharedServices].apiKey = @"3536b6d61aa6623f50c7f40eb393e281";
     CGRect fram = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:fram];
     [self.window makeKeyAndVisible];
