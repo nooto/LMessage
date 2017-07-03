@@ -718,7 +718,7 @@
 				TargetAttributes = {
 					E2528E7F1C9FF36C0015180D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = CNJJ8KEF8A;
+						DevelopmentTeam = PAZX553D3X;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -986,7 +986,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CNJJ8KEF8A;
+				DEVELOPMENT_TEAM = PAZX553D3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",
@@ -1004,7 +1004,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1719.spotmau;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenleaf.LMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1014,7 +1014,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CNJJ8KEF8A;
+				DEVELOPMENT_TEAM = PAZX553D3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LMessage/3rdParty/AMap",
@@ -1031,7 +1031,7 @@
 					"$(PROJECT_DIR)/LMessage/3rdParty/Packing/Library/MobileSubstrate/DynamicLibraries",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1719.spotmau;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greenleaf.LMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
